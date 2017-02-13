@@ -54,7 +54,18 @@ Thus there is 1 mixed NE. Namely, $((\tfrac{1}{5},\tfrac{4}{5}),(\tfrac{4}{7},\t
 \section*{Question 2}
 \subsection*{a)}
 There is exactly one NE: all the players play the action "0" in this strategy profile.\\
-This is a NE because unilaterial deviation is never beneficial. For any player $i$ to play the action $b$, where $b\neq 0$, means to lose the game. Because all the mass of the $n-1$ players plays $0$, player $i$'s deviation won't move the average too far off of $0$. If $i$ deviates maximally, to $100$ she will have moved the average maximally - to $((n-1)\times 0 + b)\times n^{-1})\times=b \tfrac{1}{n}\times$, yet in the same move distanced herself from the target of $average \times \tfrac{2}{3}$.
+This is a NE because unilaterial deviation is never beneficial. For any player $i$ to play the action $b$, where $b\neq 0$, means to lose the game. Because all the mass of the $n-1$ players plays $0$, player $i$'s deviation won't move the average too far off of $0$. If $i$ deviates too much, say to $100$, she will have moved the average maximally - to $((n-1)\times 0 + b)\times n^{-1})\times=b \tfrac{1}{n}\times$, yet in the same move distanced herself from the target of $average \times \tfrac{2}{3}$. If she distances herself just a little, the bulk of players at $0$ still garantuee that the target value is closer to $0$ than $b$.
+
+There are no further NE. Because for any possible strategy profile $\textbf{a}$ and the associated arithmetic mean $\mu(\textbf{a})$, it is beneficial to deviate to $(\sum^n_{i=1} a_i \times \tfrac{1}{n})\times \tfrac{2}{3}$. Thus, given any $\mu(\textbf{a})\neq 0$ the players will start a "race to the bottom" until $\mu(\textbf{a})$ converges to $0$. $\lim_{x\rightarrow \infty} \mu(\textbf{a})\times \tfrac{2}{3}^x=0$
+\subsection*{b}
+There are exactly two pure NE: all players play the action "0" and all players play the action "1". \\
+We can use Nash's Theorem to substantiate this claim. Let $f$ be the function simulating the updates players make to improve their payoffs. For some strategy profile $\textbf{a}$ and its associated submission average $\mu(\textbf{a})$, $f$ takes this average, multiplies by $\tfrac{2}{3}$ and rounds to the closest integer.
+
+\section*{3}
+\subsection*{a)}
+If the player-specific action vectors are of infinite length, then the space of all mixed strategy profiles will lose the property of boundedness. The space thus also loses compactness which, in its turn, prohibits the use of Brouwer's Fixed Point Theorem in the proof.
+
+\subsection*{b}
 
 
 \end{document}
