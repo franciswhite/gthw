@@ -22,18 +22,15 @@
 \section*{Question 1}
 \subsection*{a}
 There are 2 pure Nash Equilibria (NE) and 1 mixed NE.\\
-\textbf{Pure NE}\\
-We find the pure NE by analyzing the players' pure strategy profiles. Given a pure strategy profile, if neither player has  an incentive to deviate to another pure strategy then that strategy profile is a NE. A player has an incentive to deviate if she can obtain a strictly higher payoff by playing the other action.\\
-This is visualized in diagram below. Horizontal arrow represent the row player's incentive for deviation, vertical arrows the column player's incentive for deviation. The strategy profiles $(T,L)$ and $(B,R)$ are pure NE, for neither player can improve by unilaterally switching her action.
-\textbf{Mixed NE}
-Let $p$ be the probability of the row player playing $T$, and $1-p$ consequently the probability of playing $B$. Likewise, $q$ denotes the probability of the column player  playing $L$ and $1-q$ of playing $R$.
-
-Row player chooses $p$ so as to make the column player indifferent between playing $L$ and $R$.\\
+We find the pure NE by checking in all pure strategy profiles whether one of the players can gain from deviating. The strategy profiles $(T,L)$ and $(B,R)$ are pure NE, for neither player can improve by unilaterally switching her action.\\
+\textbf{Non-pure NE}:
+Let $p$ be the probability of the row player playing $T$, and $1-p$ consequently the probability of playing $B$. Likewise, $q$ denotes the probability of the column player  playing $L$ and $1-q$ of playing $R$. Row player chooses $p$ so as to make the column player indifferent between playing $L$ and $R$, while column player chooses $q$ so row player is indifferent between $T$ and $B$.\\
 \begin{align*}
-EU(L)&=EU(R)\\
-8\times p + 2\times (1-p)&= 4\times p + 3\times (1-p) \\
-6\times p + 2 &= p+3 \\
-p &= \tfrac{1}{5}
+EU(L)&=EU(R) &EU(T)&=EU(B)\\
+8\times p + 2\times (1-p)&= 4\times p + 3\times (1-p) &              &5\times q + 3\times (1-q)&= 2\times q + 7\times (1-q) \\
+6\times p + 2 &= p+3 & 2\times q + 3 &= 7-5\times q \\
+p &= \tfrac{1}{5} &7\times q &= 4 \\
+& &q &= \tfrac{4}{7}
 \end{align*}\\
 Analogously for the column player.\\
 \begin{align*}
@@ -46,42 +43,36 @@ q &= \tfrac{4}{7}
 
 Thus there is 1 mixed NE. Namely, $((\tfrac{1}{5},\tfrac{4}{5}),(\tfrac{4}{7},\tfrac{3}{7})$.
 \subsection*{b}
-There are two pure NE - one strict, one weak - and one mixed NE.
-
-\textbf{Pure NE}\\
-The diagram below again shows the players' incentive to deviate, given a strategy profile.
-The column player is indifferent between $L$ and $R$ if the row player chooses $T$. This is represented by the bidirectional arrow in the diagram below. We can read off the diagram that $(B,L)$ is a NE, for neither player has an incentive to deviate in this strategy profile. Interestingly, $(T,R)$ is also a NE, albeit a weak one. For the column player does not strictly prefer $R$ to $L$, yet this suffices to satisfy the conditions for NE.
-
-\textbf{Mixed NE}
-$p$ and $q$ again denote the probability of the respective players choosing $T$ and $L$. We then solve the indifference equations for $p$ and $q$.
-\begin{align*}
-EU(L)&=EU(R)\\
-p\times 3 + 4\times (1-p)&= 3\times p + 3\times (1-p) \\
--p + 4 &= 3 \\
-p &= 1 \\
-\end{align*}\\
-Analogously for the column player.\\
-\begin{align*}
-EU(T)&=EU(B)\\
-2\times q + 5\times (1-q)&= 5\times q + 3\times (1-q) \\
-5 - 3\times q &= 2\times q +3 \\
-2 &= 5\times q \\
-q &= \tfrac{2}{5}
-\end{align*}
-So there is one mixed NE: $((1,0),(\tfrac{2}{5},\tfrac{3}{5}))$. Row player purely plays $T$, while column player truly mixes between $L$ and $R$.
+There are two pure NE and one mixed NE.\\
+Observe that the column player is indifferent between $L$ and $R$ if the row player chooses $T$. Then we apply the same reasoning as above to find the pure NE. $(B,L)$ is a NE, for neither player has an incentive to deviate in this strategy profile. Interestingly, $(T,R)$ is also a NE, for the column player does not strictly prefer $L$ to $R$.\\
+We find the truly mixed equilibria the same way as before: by solving the indifference equations for $p$ and $q$.
+%\begin{align*}
+%EU(L)&=EU(R)\\
+%p\times 3 + 4\times (1-p)&= 3\times p + 3\times (1-p) \\
+%-p + 4 &= 3 \\
+%p &= 1 \\
+%\end{align*}\\
+%Analogously for the column player.\\
+%\begin{align*}
+%EU(T)&=EU(B)\\
+%2\times q + 5\times (1-q)&= 5\times q + 3\times (1-q) \\
+%5 - 3\times q &= 2\times q +3 \\
+%2 &= 5\times q \\
+%q &= \tfrac{2}{5}
+%\end{align*}
+This yield one mixed NE: $((1,0),(\tfrac{2}{5},\tfrac{3}{5}))$. Row player purely plays $T$, while column player truly mixes between $L$ and $R$.
 \section*{Question 2}
 \subsection*{a}
 There is exactly one NE: all the players play the action $0$. \\
 For any action profile \textit{a} and its associated average $\mu(\textit{a})$, the players have an incentive to play around $\mu(\textit{a})\times \tfrac{2}{3}$ - the \textit{target}. So given any initial $\mu(\textit{a})$, this collective dynamic of playing lower will force it down. Because they players' available moves are the rationals, there will be such a beneficial deviation for any strategy profile until they hit $0$. This marks the only stable profile. Because all the mass of the $n-1$ players at $0$, player $i$'s deviation won't move the average too far off of $0$. If $i$ deviates too much, say to $100$, she will have moved the average maximally - to $((n-1)\times 0 + b)\times n^{-1})\times=b \tfrac{1}{n}\times$, yet in the same move distanced herself from the target of $average \times \tfrac{2}{3}$.
 \subsection*{b}
 There are exactly two pure NE: all players play the action $0$ and all players play the action $1$.\\
-Consider a good response a player might deviate to upon observing some \textit{a}. This deviation would take $\mu(\textb{a}=\mu_{\textbf{a}}$, multiply by $\tfrac{2}{3}$ and round to the nearest integer; as a function: $f(\mu_{\textit{a}}=round(\mu_{\textbf{a}}\times \tfrac{2}{3})$.
-We can use Nash's Theorem to substantiate this claim. Let $f$ be the function simulating the updates players make to improve their payoffs. For some strategy profile $\textbf{a}$ and its associated submission average $\mu(\textbf{a})$, $f$ takes this average, multiplies by $\tfrac{2}{3}$ and rounds to the closest integer.
+Consider a good response a player might deviate to upon observing some \textbf{a}. This deviation would optimally take $\mu(\textbf{a}=\mu_{\textbf{a}}$, multiply by $\tfrac{2}{3}$ and round to the nearest integer; as a function: $f(\mu_{\textbf{a}}=round(\mu_{\textbf{a}}\times \tfrac{2}{3})$. In these terms, we have reached a stable state once there are no further improvements possible. Notice that all players would use the same reasoning when considering their moves. Formally a stable state is reached iff $f(\mu_{\textbf{a}})=\mu_{\textbf{a}}$ iff $round(\mu_{\textbf{a}}\times \tfrac{2}{3})=\mu_{\textbf{a}}$ iff $|\mu_{\textbf{a}}\times \tfrac{2}{3}-\mu_{\textbf{a}} < \tfrac{1}{2}$ iff $\tfrac{\mu_{\textbf{a}}}{3} < \tfrac{1}{2}$ iff $\mu_{\textbf{a}} < \tfrac{3}{2}$. Only integers are valid moves, so we get $0$ and $1$ as solutions.
 \subsection*{c}
+There are five NE which we can determine by using the mechanism from b). $round(\mu_{\textbf{a}}\times \tfrac{9}{10})=\mu_{\textbf{a}}$ iff $|\mu_{\textbf{a}}\times \tfrac{9}{10}-\mu_{\textbf{a}} < \tfrac{1}{2}$ iff $\tfrac{\mu_{\textbf{a}}}{10} < \tfrac{1}{2}$ iff $\mu_{\textbf{a}} < \tfrac{10}{2}$. Again, only considering integers this yields the NE $0,1,2,3$ and $4$.
 \section*{3}
 \subsection*{a}
 If the player-specific action vectors are of infinite length, then the space of all mixed strategy profiles will lose the property of boundedness. The space thus also loses compactness which, in its turn, prohibits the use of Brouwer's Fixed Point Theorem in the proof. Specifically, the existence of a fix point for the best response function is not garantueed anymore.
-
 \subsection*{b}
 Consider a two player zero-sum game where both players can choose from an infinite set of actions $B={b_1,b_2,...,b_{i-1},b_i,b_{i+1},...}$. A player wins the game if she chooses $b_j$, the opponent $b_k$ and $j>k$. If $j=k$ both get $0$; if $j<k$ the opponent wins. 
 
