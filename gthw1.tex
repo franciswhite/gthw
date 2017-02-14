@@ -50,8 +50,30 @@ q &= \tfrac{4}{7}
 \end{align*}
 
 Thus there is 1 mixed NE. Namely, $((\tfrac{1}{5},\tfrac{4}{5}),(\tfrac{4}{7},\tfrac{3}{7})$.
-
 \subsection*{b)}
+There are two pure NE - one strict, one weak - and one mixed NE.
+
+\textbf{Pure NE}\\
+The diagram below again shows the players' incentive to deviate, given a strategy profile.
+The column player is indifferent between $L$ and $R$ if the row player chooses $T$. This is represented by the bidirectional arrow in the diagram below. We can read off the diagram that $(B,L)$ is a NE, for neither player has an incentive to deviate in this strategy profile. Interestingly, $(T,R)$ is also a NE, albeit a weak one. For the column player does not strictly prefer $R$ to $L$, yet this suffices to satisfy the conditions for NE.
+
+\textbf{Mixed NE}
+$p$ and $q$ again denote the probability of the respective players choosing $T$ and $L$. We then solve the indifference equations for $p$ and $q$.
+\begin{align*}
+EU(L)&=EU(R)\\
+p\times 3 + 4\times (1-p)&= 3\times p + 3\times (1-p) \\
+-p + 4 &= 3 \\
+p &= 1 \\
+\end{align*}\\
+Analogously for the column player.\\
+\begin{align*}
+EU(T)&=EU(B)\\
+2\times q + 5\times (1-q)&= 5\times q + 3\times (1-q) \\
+5 - 3\times q &= 2\times q +3 \\
+2 &= 5\times q \\
+q &= \tfrac{2}{5}
+\end{align*}
+So there is one mixed NE: ((1,0),(\tfrac{2}{5},\tfrac{3}{5})). Row player purely plays $T$, while column player truly mixes between $L$ and $R$.
 \section*{Question 2}
 \subsection*{a)}
 There is exactly one NE: all the players play the action "0" in this strategy profile.\\
@@ -64,7 +86,7 @@ We can use Nash's Theorem to substantiate this claim. Let $f$ be the function si
 
 \section*{3}
 \subsection*{a)}
-If the player-specific action vectors are of infinite length, then the space of all mixed strategy profiles will lose the property of boundedness. The space thus also loses compactness which, in its turn, prohibits the use of Brouwer's Fixed Point Theorem in the proof.
+If the player-specific action vectors are of infinite length, then the space of all mixed strategy profiles will lose the property of boundedness. The space thus also loses compactness which, in its turn, prohibits the use of Brouwer's Fixed Point Theorem in the proof. Specifically, the existence of a fix point for the best response function is not garantueed anymore.
 
 \subsection*{b}
 Consider the following normal form game: $<N,A,u>$.\\
@@ -109,6 +131,15 @@ $b_{k+1}$ & 0,0   & 0,0   & 0,0   & ... & 0,0       & 1,-1    & 0,0       & ... 
 
 Clearly, there can be no NE in pure strategies. Because for any pure action $b_i$ a player chooses, the opponent optimally plays action $b_{i+1}$. Since there are infinite actions, the players would eternally move down their list of available actions and never reach equilibrium. Moreover, there are no mixed NE because
 
+\section*{Question 4}
+\subsection*{a)}
+\textit{Tit-for-tat} plays $C$ in the opening round. For all other rounds of the game the strategy then copies whatever the opponent played in the previous round.
 
+\textbf{Textual definition}\\
+2\\
+C,0,1\\
+D,0,1
+
+\subsection*{b)}
 
 \end{document}
