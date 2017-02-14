@@ -3,11 +3,9 @@
 
 \title{%
   Game Theory: Homework 1 \\
-  \large Due Date: 15.2.17\\
   \large Silvan Hungerbuehler, 11394013}
 
 \usepackage{mathptmx} % "times new roman"
-\usepackage[left=4cm,right=4cm,top=4.5cm,bottom=5.5cm,footskip=1cm]{geometry} % for submission requirements
 \usepackage{amssymb}
 \usepackage{amsmath, amsthm}
 \usepackage{amsfonts}
@@ -22,14 +20,12 @@
 \maketitle
 
 \section*{Question 1}
-\subsection*{a)}
+\subsection*{a}
 There are 2 pure Nash Equilibria (NE) and 1 mixed NE.\\
 \textbf{Pure NE}\\
 We find the pure NE by analyzing the players' pure strategy profiles. Given a pure strategy profile, if neither player has  an incentive to deviate to another pure strategy then that strategy profile is a NE. A player has an incentive to deviate if she can obtain a strictly higher payoff by playing the other action.\\
 This is visualized in diagram below. Horizontal arrow represent the row player's incentive for deviation, vertical arrows the column player's incentive for deviation. The strategy profiles $(T,L)$ and $(B,R)$ are pure NE, for neither player can improve by unilaterally switching her action.
-
 \textbf{Mixed NE}
-
 Let $p$ be the probability of the row player playing $T$, and $1-p$ consequently the probability of playing $B$. Likewise, $q$ denotes the probability of the column player  playing $L$ and $1-q$ of playing $R$.
 
 Row player chooses $p$ so as to make the column player indifferent between playing $L$ and $R$.\\
@@ -37,7 +33,6 @@ Row player chooses $p$ so as to make the column player indifferent between playi
 EU(L)&=EU(R)\\
 8\times p + 2\times (1-p)&= 4\times p + 3\times (1-p) \\
 6\times p + 2 &= p+3 \\
-5p &= 1 \\
 p &= \tfrac{1}{5}
 \end{align*}\\
 Analogously for the column player.\\
@@ -50,7 +45,7 @@ q &= \tfrac{4}{7}
 \end{align*}
 
 Thus there is 1 mixed NE. Namely, $((\tfrac{1}{5},\tfrac{4}{5}),(\tfrac{4}{7},\tfrac{3}{7})$.
-\subsection*{b)}
+\subsection*{b}
 There are two pure NE - one strict, one weak - and one mixed NE.
 
 \textbf{Pure NE}\\
@@ -73,63 +68,41 @@ EU(T)&=EU(B)\\
 2 &= 5\times q \\
 q &= \tfrac{2}{5}
 \end{align*}
-So there is one mixed NE: ((1,0),(\tfrac{2}{5},\tfrac{3}{5})). Row player purely plays $T$, while column player truly mixes between $L$ and $R$.
+So there is one mixed NE: $((1,0),(\tfrac{2}{5},\tfrac{3}{5}))$. Row player purely plays $T$, while column player truly mixes between $L$ and $R$.
 \section*{Question 2}
-\subsection*{a)}
-There is exactly one NE: all the players play the action "0" in this strategy profile.\\
-This is a NE because unilaterial deviation is never beneficial. For any player $i$ to play the action $b$, where $b\neq 0$, means to lose the game. Because all the mass of the $n-1$ players plays $0$, player $i$'s deviation won't move the average too far off of $0$. If $i$ deviates too much, say to $100$, she will have moved the average maximally - to $((n-1)\times 0 + b)\times n^{-1})\times=b \tfrac{1}{n}\times$, yet in the same move distanced herself from the target of $average \times \tfrac{2}{3}$. If she distances herself just a little, the bulk of players at $0$ still garantuee that the target value is closer to $0$ than $b$.
-
-There are no further NE. Because for any possible strategy profile $\textbf{a}$ and the associated arithmetic mean $\mu(\textbf{a})$, it is beneficial to deviate to $(\sum^n_{i=1} a_i \times \tfrac{1}{n})\times \tfrac{2}{3}$. Thus, given any $\mu(\textbf{a})\neq 0$ the players will start a "race to the bottom" until $\mu(\textbf{a})$ converges to $0$. $\lim_{x\rightarrow \infty} \mu(\textbf{a})\times \tfrac{2}{3}^x=0$
+\subsection*{a}
+There is exactly one NE: all the players play the action $0$. \\
+For any action profile \textit{a} and its associated average $\mu(\textit{a})$, the players have an incentive to play around $\mu(\textit{a})\times \tfrac{2}{3}$ - the \textit{target}. So given any initial $\mu(\textit{a})$, this collective dynamic of playing lower will force it down. Because they players' available moves are the rationals, there will be such a beneficial deviation for any strategy profile until they hit $0$. This marks the only stable profile. Because all the mass of the $n-1$ players at $0$, player $i$'s deviation won't move the average too far off of $0$. If $i$ deviates too much, say to $100$, she will have moved the average maximally - to $((n-1)\times 0 + b)\times n^{-1})\times=b \tfrac{1}{n}\times$, yet in the same move distanced herself from the target of $average \times \tfrac{2}{3}$.
 \subsection*{b}
-There are exactly two pure NE: all players play the action "0" and all players play the action "1". \\
+There are exactly two pure NE: all players play the action $0$ and all players play the action $1$.\\
+Consider a good response a player might deviate to upon observing some \textit{a}. This deviation would take $\mu(\textb{a}=\mu_{\textbf{a}}$, multiply by $\tfrac{2}{3}$ and round to the nearest integer; as a function: $f(\mu_{\textit{a}}=round(\mu_{\textbf{a}}\times \tfrac{2}{3})$.
 We can use Nash's Theorem to substantiate this claim. Let $f$ be the function simulating the updates players make to improve their payoffs. For some strategy profile $\textbf{a}$ and its associated submission average $\mu(\textbf{a})$, $f$ takes this average, multiplies by $\tfrac{2}{3}$ and rounds to the closest integer.
-
+\subsection*{c}
 \section*{3}
-\subsection*{a)}
+\subsection*{a}
 If the player-specific action vectors are of infinite length, then the space of all mixed strategy profiles will lose the property of boundedness. The space thus also loses compactness which, in its turn, prohibits the use of Brouwer's Fixed Point Theorem in the proof. Specifically, the existence of a fix point for the best response function is not garantueed anymore.
 
 \subsection*{b}
-Consider the following normal form game: $<N,A,u>$.\\
-$N=\{1,2\}$\\
-$A_1=A_2=\{b_1,b_2,b_3,...,b_{k-1},b_{k},b_{k+1},...\}$, i.e. infinite sets of actions.
-$A=A_1\times A_2=\textbf{a}=(a_1,a_2)$, i.e. an infinite set of action profiles.\\
-$u=(u_1,u_2)$\\
-\begin{equation*}
-u_1(a_1,a_2) \begin{cases}
-a_1=a_2 & \text{0}\\
-a_1=b_i \land a_2=b_{i+1} & \text{-1}\\
-a_1=b_i \land a_2=b_{i-1} & \text{1}\\
-otherwise & \text{0}
-\end{cases}
-\end{equation*}
-
-\begin{equation*}
-u_2(a_1,a_2) \begin{cases}
-a_1=a_2 & \text{0}\\
-a_1=b_i \land a_2=b_{i+1} & \text{1}\\
-a_1=b_i \land a_2=b_{i-1} & \text{-1}\\
-otherwise & \text{0}
-\end{cases}
-\end{equation*}
+Consider a two player zero-sum game where both players can choose from an infinite set of actions $B={b_1,b_2,...,b_{i-1},b_i,b_{i+1},...}$. A player wins the game if she chooses $b_j$, the opponent $b_k$ and $j>k$. If $j=k$ both get $0$; if $j<k$ the opponent wins. 
 
 \begin{table}[h]
 \centering
 \caption{Infinite Strategy Game}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
 \hline
-          & $b_1$ & $b_2$ & $b_3$ & ... & $b_{k-1}$ & $b_{k}$ & $b_{k+1}$ & ... \\ \hline
-$b_1$     & 0,0   & -1,1  & 0,0   & ... & 0,0       & 0,0     & 0,0       & ... \\ \hline
-$b_2$     & 1,-1  & 0,0   & -1,1  & ... & 0,0       & 0,0     & 0,0       & ... \\ \hline
-$b_3$     & 0,0   & 1,-1  & 0,0   & ... & 0,0       & 0,0     & 0,0       &     \\ \hline
+          & $b_1$ & $b_2$ & $b_3$ & ... & $b_{i-1}$ & $b_{i}$ & $b_{i+1}$ & ... \\ \hline
+$b_1$     & 0,0   & -1,1  & 0,0   & ... & -1,1       & -1,1     & -1,1       & ... \\ \hline
+$b_2$     & 1,-1  & 0,0   & -1,1  & ... & -1,1       & -1,1     & -1,1      & ... \\ \hline
+$b_3$     & 1,-1   & 1,-1  & 0,0   & ... & -1,1       & -1,1     & -1,1       &     \\ \hline
 ...       & ...   & ...   & ...   & ... & ...       & ...     & ...       & ... \\ \hline
-$b_{k-1}$ & 0,0   & 0,0   & 0,0   & ... & 0,0       & -1,1    & 0,0       & ... \\ \hline
-$b_{k}$   & 0,0   & 0,0   & 0,0   & ... & 1,-1      & 0,0     & -1,1      & ... \\ \hline
-$b_{k+1}$ & 0,0   & 0,0   & 0,0   & ... & 0,0       & 1,-1    & 0,0       & ... \\ \hline
+$b_{k-1}$ & 1,-1   & 1,-1   & 1,-1   & ... & 0,0       & -1,1    & -1,1       & ... \\ \hline
+$b_{k}$   & 1,-1   & 1,-1   & 1,-1   & ... & 1,-1      & 0,0     & -1,1      & ... \\ \hline
+$b_{k+1}$ & 1,-1   & 1,-1   & 1,-1   & ... & 1,-1       & 1,-1    & 0,0       & ... \\ \hline
 ...       & ...   & ...   & ...   & ... & ...       & ...     & ...       & ... \\ \hline
 \end{tabular}
 \end{table}
 
-Clearly, there can be no NE in pure strategies. Because for any pure action $b_i$ a player chooses, the opponent optimally plays action $b_{i+1}$. Since there are infinite actions, the players would eternally move down their list of available actions and never reach equilibrium. Moreover, there are no mixed NE because
+Clearly, there can be no NE in pure strategies. Because for any pure action $b_i$ a player chooses, the opponent optimally plays action $b_{i+1}$. Since there are infinite actions, the players would eternally move down their list of available actions and never reach equilibrium. Moreover, there can be no mixed NE, since for any strategy profile where either player mixes between actions, her opponent still wins by always playing some "higher" $b_i$ than any in the mix. Thus, playing mixed is also never stable.
 
 \section*{Question 4}
 \subsection*{a)}
