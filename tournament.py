@@ -1,5 +1,5 @@
 #Opponent
-opp_strategy_path = "/home/sh/PycharmProjects/gthw1/titfortat.txt"
+opp_strategy_path = "/home/sh/Desktop/gthw/titfortat.txt"
 opp_txt = open(opp_strategy_path, 'r')
 
 opp_strategy = []
@@ -14,7 +14,7 @@ opp_strategy_name = opp_strategy[1]
 opp_number_nodes = opp_strategy[2]
 
 #Me and my team
-strategy_path = "/home/sh/PycharmProjects/gthw1/defect.txt"
+strategy_path = "/home/sh/Desktop/gthw/defect.txt"
 my_txt = open(strategy_path, 'r')
 
 my_strategy = []
@@ -57,11 +57,11 @@ for i in range(1, rounds):
 
         present_node = my_strategy[my_node] #Transitioning to new node
         present_node.split(",")
-        my_node = present_node[2]
+        my_node = int(present_node[4])
 
         present_node = opp_strategy[opp_node] #Transitioning to new node
         present_node.split(",")
-        opp_node = present_node[2]
+        opp_node = int(present_node[4])
 
     elif my_strategy[my_node].split(",")[0]=="C" and opp_strategy[opp_node].split(",")[0]=="D": #We lose
         my_points_total += points_loss
@@ -69,11 +69,11 @@ for i in range(1, rounds):
 
         present_node = my_strategy[my_node]  # Transitioning to new node
         present_node.split(",")
-        my_node = present_node[4]
+        my_node = int(present_node[4])
 
         present_node = opp_strategy[opp_node]  # Transitioning to new node
         present_node.split(",")
-        opp_node = present_node[2]
+        opp_node = int(present_node[2])
 
     elif my_strategy[my_node].split(",")[0]=="D" and opp_strategy[opp_node].split(",")[0]=="C": #We win
         my_points_total += points_win
@@ -81,11 +81,11 @@ for i in range(1, rounds):
 
         present_node = my_strategy[0]  # Transitioning to new node
         present_node.split(",")
-        my_node = present_node[2]
+        my_node = int(present_node[2])
 
         present_node = opp_strategy[opp_node]  # Transitioning to new node
         present_node.split(",")
-        opp_node = present_node[4]
+        opp_node = int(present_node[4])
 
     elif my_strategy[my_node].split(",")[0]=="C" and opp_strategy[opp_node].split(",")[0]=="C": #Coop draw
         my_points_total += points_coop
@@ -93,12 +93,14 @@ for i in range(1, rounds):
 
         present_node = my_strategy[my_node]  # Transitioning to new node
         present_node.split(",")
-        my_node = present_node[2]
+        my_node = int(present_node[2])
 
         present_node = opp_strategy[opp_node]  # Transitioning to new node
         present_node.split(",")
-        opp_node = present_node[2]
-    print(my_points_total, opp_points_total)
+        opp_node = int(present_node[2])
+
+print(my_node,opp_node)
+print(my_points_total, opp_points_total)
 
 if my_points_total > opp_points_total:
     winner = my_strategy_name
