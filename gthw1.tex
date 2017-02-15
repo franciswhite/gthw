@@ -26,26 +26,17 @@ We find the pure NE by checking in all pure strategy profiles whether one of the
 \textbf{Non-pure NE}:
 Let $p$ be the probability of the row player playing $T$, and $1-p$ consequently the probability of playing $B$. Likewise, $q$ denotes the probability of the column player  playing $L$ and $1-q$ of playing $R$. Row player chooses $p$ so as to make the column player indifferent between playing $L$ and $R$, while column player chooses $q$ so row player is indifferent between $T$ and $B$.\\
 \begin{align*}
-EU(L)&=EU(R) &EU(T)&=EU(B)\\
-8\times p + 2\times (1-p)&= 4\times p + 3\times (1-p) &              &5\times q + 3\times (1-q)&= 2\times q + 7\times (1-q) \\
-6\times p + 2 &= p+3 & 2\times q + 3 &= 7-5\times q \\
-p &= \tfrac{1}{5} &7\times q &= 4 \\
-& &q &= \tfrac{4}{7}
+&EU(L)=EU(R) &EU(T)=EU(B)\\
+&8p + 2* (1-p)= 4p + 3* (1-p)              &5q + 3* (1-q)= 2q + 7* (1-q) \\
+&6p + 2 = p+3 &2q + 3 = 7-5q \\
+&p = \tfrac{1}{5} &7q = 4 \\
+& &q = \tfrac{4}{7}
 \end{align*}\\
-Analogously for the column player.\\
-\begin{align*}
-EU(T)&=EU(B)\\
-5\times q + 3\times (1-q)&= 2\times q + 7\times (1-q) \\
-2\times q + 3 &= 7-5\times q \\
-7\times q &= 4 \\
-q &= \tfrac{4}{7}
-\end{align*}
-
 Thus there is 1 mixed NE. Namely, $((\tfrac{1}{5},\tfrac{4}{5}),(\tfrac{4}{7},\tfrac{3}{7})$.
 \subsection*{b}
 There are two pure NE and one mixed NE.\\
 Observe that the column player is indifferent between $L$ and $R$ if the row player chooses $T$. Then we apply the same reasoning as above to find the pure NE. $(B,L)$ is a NE, for neither player has an incentive to deviate in this strategy profile. Interestingly, $(T,R)$ is also a NE, for the column player does not strictly prefer $L$ to $R$.\\
-We find the truly mixed equilibria the same way as before: by solving the indifference equations for $p$ and $q$.
+We find the truly mixed equilibria as before: by solving the indifference equations for $p$ and $q$.
 %\begin{align*}
 %EU(L)&=EU(R)\\
 %p\times 3 + 4\times (1-p)&= 3\times p + 3\times (1-p) \\
@@ -60,19 +51,20 @@ We find the truly mixed equilibria the same way as before: by solving the indiff
 %2 &= 5\times q \\
 %q &= \tfrac{2}{5}
 %\end{align*}
-This yield one mixed NE: $((1,0),(\tfrac{2}{5},\tfrac{3}{5}))$. Row player purely plays $T$, while column player truly mixes between $L$ and $R$.
+Thus we obtain one mixed NE: $((1,0),(\tfrac{2}{5},\tfrac{3}{5}))$. Row player purely plays $T$, while column player truly mixes between $L$ and $R$.
 \section*{Question 2}
 \subsection*{a}
 There is exactly one NE: all the players play the action $0$. \\
-For any action profile \textit{a} and its associated average $\mu(\textit{a})$, the players have an incentive to play around $\mu(\textit{a})\times \tfrac{2}{3}$ - the \textit{target}. So given any initial $\mu(\textit{a})$, this collective dynamic of playing lower will force it down. Because they players' available moves are the rationals, there will be such a beneficial deviation for any strategy profile until they hit $0$. This marks the only stable profile. Because all the mass of the $n-1$ players at $0$, player $i$'s deviation won't move the average too far off of $0$. If $i$ deviates too much, say to $100$, she will have moved the average maximally - to $((n-1)\times 0 + b)\times n^{-1})\times=b \tfrac{1}{n}\times$, yet in the same move distanced herself from the target of $average \times \tfrac{2}{3}$.
+For any action profile \textit{a} and its associated average $\mu(\textit{a})$, some players have an incentive to play around $\mu(\textit{a})\times \tfrac{2}{3}$ - the \textit{target}. So given any initial $\mu(\textit{a})$, there is a collective dynamic of playing lower will force it down. Because they players' available moves are the rationals, there is a beneficial deviation for any strategy profile until they hit $0$. This marks the only stable profile where no player $i$ has an incentive to deviate. Because all the mass of the $n-1\geq 100$ players at $0$, player $i$'s deviation would not move the average too far off of $0$. Although the larger the deviation from $0$ the more she shifts the average, at the same time she would distance herself from the target.
 \subsection*{b}
 There are exactly two pure NE: all players play the action $0$ and all players play the action $1$.\\
-Consider a good response a player might deviate to upon observing some \textbf{a}. This deviation would optimally take $\mu(\textbf{a}=\mu_{\textbf{a}}$, multiply by $\tfrac{2}{3}$ and round to the nearest integer; as a function: $f(\mu_{\textbf{a}}=round(\mu_{\textbf{a}}\times \tfrac{2}{3})$. In these terms, we have reached a stable state once there are no further improvements possible. Notice that all players would use the same reasoning when considering their moves. Formally a stable state is reached iff $f(\mu_{\textbf{a}})=\mu_{\textbf{a}}$ iff $round(\mu_{\textbf{a}}\times \tfrac{2}{3})=\mu_{\textbf{a}}$ iff $|\mu_{\textbf{a}}\times \tfrac{2}{3}-\mu_{\textbf{a}} < \tfrac{1}{2}$ iff $\tfrac{\mu_{\textbf{a}}}{3} < \tfrac{1}{2}$ iff $\mu_{\textbf{a}} < \tfrac{3}{2}$. Only integers are valid moves, so we get $0$ and $1$ as solutions.
+Consider a good response a player might deviate to upon observing some strategy profile \textbf{a}. In order to improve the player's payoff this deviation would optimally take $\mu(\textbf{a}):=\mu_{\textbf{a}}$, multiply by $\tfrac{2}{3}$ and round to the nearest integer; as a function: $f(\mu_{\textbf{a}}=round(\mu_{\textbf{a}}\times \tfrac{2}{3})$. In these terms, we have reached a stable state once there are no further improvements possible. Notice that all players would use the same reasoning when considering their moves which assures that in a stable state everyone plays the same action. Formally a stable state is reached iff $f(\mu_{\textbf{a}})=\mu_{\textbf{a}}$, that is, iff $round(\mu_{\textbf{a}}\times \tfrac{2}{3})=\mu_{\textbf{a}}$. Because of the way the rounding function works we can write this equation and solve it for $\mu_{\textbf{a}}$: $|\mu_{\textbf{a}}\times \tfrac{2}{3}-\mu_{\textbf{a}} < \tfrac{1}{2}$ iff $\tfrac{\mu_{\textbf{a}}}{3} < \tfrac{1}{2}$ iff $\mu_{\textbf{a}} < \tfrac{3}{2}$. Only integers are valid moves, so we get $0$ and $1$ as solutions.
 \subsection*{c}
-There are five NE which we can determine by using the mechanism from b). $round(\mu_{\textbf{a}}\times \tfrac{9}{10})=\mu_{\textbf{a}}$ iff $|\mu_{\textbf{a}}\times \tfrac{9}{10}-\mu_{\textbf{a}} < \tfrac{1}{2}$ iff $\tfrac{\mu_{\textbf{a}}}{10} < \tfrac{1}{2}$ iff $\mu_{\textbf{a}} < \tfrac{10}{2}$. Again, only considering integers this yields the NE $0,1,2,3$ and $4$.
+There are five NE which we can determine by using the mechanism from b). We replace $\tfrac{2}{3}$ by $\tfrac{9}{10}$ and solve the following:\\
+$round(\mu_{\textbf{a}}\times \tfrac{9}{10})=\mu_{\textbf{a}}$ iff $|\mu_{\textbf{a}}\times \tfrac{9}{10}-\mu_{\textbf{a}} < \tfrac{1}{2}$ iff $\tfrac{\mu_{\textbf{a}}}{10} < \tfrac{1}{2}$ iff $\mu_{\textbf{a}} < \tfrac{10}{2}$. Again, only considering integers this yields the NE $0,1,2,3$ and $4$.
 \section*{3}
 \subsection*{a}
-If the player-specific action vectors are of infinite length, then the space of all mixed strategy profiles will lose the property of boundedness. The space thus also loses compactness which, in its turn, prohibits the use of Brouwer's Fixed Point Theorem in the proof. Specifically, the existence of a fix point for the best response function is not garantueed anymore.
+If the player-specific action vectors are of infinite length, then the space of all mixed strategy profiles will lose the property of boundedness. The space thus also loses compactness which, in its turn, prohibits the use of Brouwer's Fixed Point Theorem in the proof. Concretely, the existence of a fix point for the update response function is not garantueed anymore.
 \subsection*{b}
 Consider a two player zero-sum game where both players can choose from an infinite set of actions $B={b_1,b_2,...,b_{i-1},b_i,b_{i+1},...}$. A player wins the game if she chooses $b_j$, the opponent $b_k$ and $j>k$. If $j=k$ both get $0$; if $j<k$ the opponent wins. 
 
@@ -96,14 +88,14 @@ $b_{k+1}$ & 1,-1   & 1,-1   & 1,-1   & ... & 1,-1       & 1,-1    & 0,0       & 
 Clearly, there can be no NE in pure strategies. Because for any pure action $b_i$ a player chooses, the opponent optimally plays action $b_{i+1}$. Since there are infinite actions, the players would eternally move down their list of available actions and never reach equilibrium. Moreover, there can be no mixed NE, since for any strategy profile where either player mixes between actions, her opponent still wins by always playing some "higher" $b_i$ than any in the mix. Thus, playing mixed is also never stable.
 
 \section*{Question 4}
-\subsection*{a)}
+\subsection*{a}
 \textit{Tit-for-tat} plays $C$ in the opening round. For all other rounds of the game the strategy then copies whatever the opponent played in the previous round.
 
 \textbf{Textual definition}\\
 2\\
 C,0,1\\
 D,0,1
-
-\subsection*{b)}
-
+\subsection*{b}
+Given a field of sufficiently sophisticated opponents we assume that most have some defense mechanism in place against being exploited when cooperating. The only way to defend is to defect. This makes it impossible to consistently defect, while the opponent cooperates. Once her defense mechanism is triggered, the only possible way of bringing her back to cooperate is to cooperate in some round where she does not. Thus, exchanging "wins/losses" is also not a good option, for in the long run this causes a cost of $12.5$ per round, while cooperation only amounts to a cost of $10$ per round. It is thus preferable to try to establish cooperation instead of going for the quick winning round.\\
+We start out with $C$ which is upheld if the opponent cooperates. In case she defects we probe whether 
 \end{document}
