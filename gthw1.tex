@@ -89,13 +89,22 @@ Clearly, there can be no NE in pure strategies. Because for any pure action $b_i
 
 \section*{Question 4}
 \subsection*{a}
-\textit{Tit-for-tat} plays $C$ in the opening round. For all other rounds of the game the strategy then copies whatever the opponent played in the previous round.
-
-\textbf{Textual definition}\\
+\textit{Tit-for-tat} plays $C$ in the opening round. For all other rounds of the game the strategy then copies whatever the opponent played in the previous round.\\
+\textbf{Textual representation}\\
 2\\
 C,0,1\\
 D,0,1
 \subsection*{b}
-Given a field of sufficiently sophisticated opponents we assume that most have some defense mechanism in place against being exploited when cooperating. The only way to defend is to defect. This makes it impossible to consistently defect, while the opponent cooperates. Once her defense mechanism is triggered, the only possible way of bringing her back to cooperate is to cooperate in some round where she does not. Thus, exchanging "wins/losses" is also not a good option, for in the long run this causes a cost of $12.5$ per round, while cooperation only amounts to a cost of $10$ per round. It is thus preferable to try to establish cooperation instead of going for the quick winning round.\\
-We start out with $C$ which is upheld if the opponent cooperates. In case she defects we probe whether 
+Given a field of sufficiently sophisticated opponents we assume that most have some defense mechanism in place against being exploited when cooperating. The only way to defend is to defect. This makes it impossible to consistently defect, while the opponent cooperates. Once her defense mechanism is triggered, the only possible way of bringing her back to cooperate is to cooperate in some round where she does not. Thus, exchanging "wins/losses" is also not a good option, for in the long run this causes a cost of $12.5$ per round, while cooperation only amounts to a cost of $10$ per round. It is thus preferable to try to establish cooperation instead of going for the quick winning round. Also, we allow to be taken advantage of a couple of times without retaliation so as to avoid going to an eternal loop of defection too early. \\
+We start out with $C$ which is upheld if the opponent cooperates. In case she defects we cooperate in the subsequent round and move to a second part of our strategy. Here we again cooperate if the opponent does so, otherwise we cooperate and move to a third part of the game. There we essentially play tit for tat.\\
+\textbf{Textual representation}\\
+7
+C,0,1
+C,2,2
+C,2,3
+C,4,4
+C,4,5
+C,5,6
+D,5,6
+
 \end{document}
