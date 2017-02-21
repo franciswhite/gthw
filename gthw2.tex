@@ -45,92 +45,6 @@ $B$     & 0,0  & -5,-5  \\ \hline
 \end{table}
 
 \subsection*{c}
-
-\section*{Question 2}
-\subsection*{a}
-The following two-player game in normal form provides a counterexample to the claim that iterated elimination of weakly dominated strategies is order-independent. We show that we arrive at two different solutions by successively removing weakly dominated strategies.
-
-\begin{table}[h]
-\begin{tabular}{|l|l|l|}
-\hline
-          & $L$ & $R$  \\ \hline
-$T$     & 5,0   & 5,0 \\ \hline
-$M$     & 1,8 & 1,2  \\ \hline
-$B$		& 5,2	& 1,6 \\ \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[h]
-%\centering
-\begin{tabular}{|l|l|l|}
-\hline
-          & $L$ & $R$  \\ \hline
-$T$     & 5,0   & 5,0 \\ \hline
-$M$     & 1,8 & 1,2  \\ \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[h]
-%\centering
-\begin{tabular}{|l|l|}
-\hline
-          & $L$\\ \hline
-$T$     & 5,0 \\ \hline
-$M$     & 1,8\\ \hline
-\end{tabular}
-\end{table}
-\begin{table}[h]
-%\centering
-\begin{tabular}{|l|l|}
-\hline
-          & $L$\\ \hline
-$T$     & 5,0 \\ \hline
-\end{tabular}
-\end{table} 
-
-Notice that we eliminated the weakly dominated strategy $M$ in our first step. We could have eliminated $B$ just as well, since it is also weakly dominated. Doing so then yields the following succession of eliminations:
-
-\begin{table}[h]
-\begin{tabular}{|l|l|l|}
-\hline
-          & $L$ & $R$  \\ \hline
-$T$     & 5,0   & 5,0 \\ \hline
-$M$     & 1,8 & 1,2  \\ \hline
-$B$		& 5,2	& 1,6 \\ \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[h]
-%\centering
-\begin{tabular}{|l|l|l|}
-\hline
-          & $L$ & $R$  \\ \hline
-$T$     & 5,0   & 5,0 \\ \hline
-$B$     & 5,2 & 1,6  \\ \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[h]
-%\centering
-\begin{tabular}{|l|l|}
-\hline
-          & $R$\\ \hline
-$T$     & 5,0 \\ \hline
-$B$     & 1,6\\ \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[h]
-%\centering
-\begin{tabular}{|l|l|}
-\hline
-          & $R$\\ \hline
-$T$     & 5,0 \\ \hline
-\end{tabular}
-\end{table} 
-
-Thus we can obtain both $(T,L)$ as well as $(T,R)$ by eliminating weakly dominated strategies, depending on how we start our elimination. This suffices to show that the process is order-dependent.
-\subsection*{c}
 Consider the following normal-form game $G$, where $k$ is any natural number you please:
 \begin{table}[h]
 %\centering
@@ -142,6 +56,71 @@ B & 0,0 & $k^{10},k^{10}$ \\ \hline
 \end{tabular}
 \end{table}
 Both $(T,L)$ and $(B,R)$ are NE. Social welfare under the first is $2k$; while the latter is the optimal strategy profile in terms of social welfare and yields $2k^{10}$. The price of anarchy is thus $\tfrac{2k^{10}}{2k}=k^{9}$. For any $k\in \mathbb{N}/{0}$ the PoA($G$)$=k^{9}>k$.
+\section*{Question 2}
+The following two-player game in normal form provides a counterexample to the claim that iterated elimination of weakly dominated strategies is order-independent. We show that we can arrive at two different solutions if we successively remove weakly dominated strategies in different order.\\
+The following are two series of tables where the ones immediately below are the result of removing some weakly dominated strategy from the one above. On the left Rowena first removes $B$, on the right $M$.
+
+\begin{table}[h]
+\centering
+\begin{tabular}[l]{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & 5,0   & 5,0 \\ \hline
+$M$     & 1,8 & 1,2  \\ \hline
+$B$		& 5,2	& 1,6 \\ \hline
+\end{tabular}
+\quad
+\begin{tabular}[r]{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & 5,0   & 5,0 \\ \hline
+$M$     & 1,8 & 1,2  \\ \hline
+$B$		& 5,2	& 1,6 \\ \hline
+\end{tabular}
+
+\begin{tabular}[l]{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & 5,0   & 5,0 \\ \hline
+$M$     & 1,8 & 1,2  \\ \hline
+\end{tabular}
+\quad
+\begin{tabular}[r]{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & 5,0   & 5,0 \\ \hline
+$B$     & 5,2 & 1,6  \\ \hline
+\end{tabular}
+
+\begin{tabular}[l]{|l|l|}
+\hline
+          & $L$\\ \hline
+$T$     & 5,0 \\ \hline
+$M$     & 1,8\\ \hline
+\end{tabular}
+\quad
+\begin{tabular}[r]{|l|l|}
+\hline
+          & $R$\\ \hline
+$T$     & 5,0 \\ \hline
+$B$     & 1,6\\ \hline
+\end{tabular}
+
+\begin{tabular}[l]{|l|l|}
+\hline
+          & $L$\\ \hline
+$T$     & 5,0 \\ \hline
+\end{tabular}
+\quad
+\begin{tabular}[r]{|l|l|}
+\hline
+          & $R$\\ \hline
+$T$     & 5,0 \\ \hline
+\end{tabular}
+\end{table}
+ 
+Thus we can obtain both $(T,L)$ as well as $(T,R)$ by eliminating weakly dominated strategies, depending on how we start our elimination. This suffices to show that the process is order-dependent.
+
 \section*{Question 3}
 \subsection*{a}
 Consider the following two-player game.
@@ -155,7 +134,7 @@ $B$     & 0,0 & 1,100  \\ \hline
 \end{tabular}
 \end{table}
 With no correlation device in place $T$ is strictly dominant for Rowena and $R$ for Colin. The strategy profile $(T,R)$ is therefore a pure NE, it yields an expected payoff of $2$ for both. Because strictly dominant strategies exist there are no NE in mixed strategies.\\
-By using a correlation device, however, both players can strictly improve their expected payoff. Assume they ask some local Juju man to sacrifice a brown chicken at midnight before playing the game. The Juju man will examine the chicken's liver and tell them seperately whether it's dark red or bright purple. As everyone knows, either state of the chicken's liver obtains with a probability of $0.5$.\\ If Rowena then plays the strategy ''If dark red, play $T$; if purple, play $B$." and Colin plays the strategy ''If dark red, play $L$; if purple, play $R$", then the players' expected payoff under this strategy profile is $0.5*100+0.5*1=50.5$.\\
+By using a correlation device, however, both players can strictly improve   their expected payoff. Assume they ask some local Juju man to sacrifice a brown chicken at midnight before playing the game. The Juju man will examine the chicken's liver and tell them seperately whether it's dark red or bright purple. As everyone knows, either state of the chicken's liver obtains with a probability of $0.5$.\\ If Rowena then plays the strategy ''If dark red, play $T$; if purple, play $B$." and Colin plays the strategy ''If dark red, play $L$; if purple, play $R$", then the players' expected payoff under this strategy profile is $0.5*100+0.5*1=50.5$.\\
 The sum of the expected payoff under this correlated equilibrium is equal to $2*50.5=101$ which strictly larger the $2*2=4$ under the pure NE $(T,R)$. We have thus found a game and a correlated equilibrium for which the sum of the expected utility is strictly higher than for any other NE of the game.
 
 \end{document}
