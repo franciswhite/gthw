@@ -1,0 +1,150 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+\title{%
+  Game Theory: Homework 2 \\
+  \large Silvan Hungerbuehler, 11394013}
+
+\usepackage{mathptmx} % "times new roman"
+\usepackage{amssymb}
+\usepackage{amsmath, amsthm}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{comment}
+\usepackage[margin=1in]{geometry}
+
+\usepackage[normalem]{ulem}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+\subsection*{a}
+To find the NE, we have to find the strategies where no player who plays $d_1$ wants to switch to $d_2$ and vice versa. This is the case if the expected utility of playing $d_1$ equals that of playing $d_2$. Formally, this means solving the following equation for $x$ - the number of people playing $d_2$
+\begin{align*}
+&EU(d_1)=EU(d_2)\\
+&10=\sqrt{x}, \text{ for } x\in \mathbb{N}\cap \{0,1,...,200\}\\
+\implies &x = 100
+\end{align*}
+Thus there are $\binom{200}{100}$ NE where 100 players choose $d_1$ and 100 choose $d_2$. These consitute the only NE because for if $a>100$ go for $d_2$, then $\sqrt{a}>10$ and there is an incentive to choose $d_1$. Conversely, if $a<100$ then $\sqrt{a}<10$ and there is an incentive to play $d_2$. These being the only NE possible, they are also the worst NE. Social cost under these NE amount to $200*10=2000$.\\
+To find the optimal social solution we minimize the function $x*10+(200-148) * \sqrt{x}$ for the argument $x$ - how many agents choose $d_1$.
+ This yields $x^* \approx 148$ which,  in its turn, implies a social cost of $148 * 10 + (200-148)* \sqrt{(200-148)} \approx 1855$.\\
+So the price of anarchy is roughly $\tfrac{2000}{1855}\approx 1.0782$.
+\subsection*{b}
+Consider a two-player game in normal form given below. The profile $(T,L)$ clearly is the only NE. This makes it also the worst NE in terms of social welfare. At the same time it is the best strategy profile in terms of social welfare. The price of anarchy is thus $\tfrac{5+5}{5+5}=1$. That is, there is no price to be paid for anarchy.
+\begin{table}[h]
+%\centering
+\begin{tabular}{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & 5,5   & 0,0   \\ \hline
+$B$     & 0,0  & -5,-5  \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection*{c}
+
+\section*{Question 2}
+\subsection*{a}
+The following two-player game in normal form provides a counterexample to the claim that iterated elimination of weakly dominated strategies is order-independent. We show that we arrive at two different solutions by successively removing weakly dominated strategies.
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & 5,0   & 5,0 \\ \hline
+$M$     & 1,8 & 1,2  \\ \hline
+$B$		& 5,2	& 1,6 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+%\centering
+\begin{tabular}{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & 5,0   & 5,0 \\ \hline
+$M$     & 1,8 & 1,2  \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+%\centering
+\begin{tabular}{|l|l|}
+\hline
+          & $L$\\ \hline
+$T$     & 5,0 \\ \hline
+$M$     & 1,8\\ \hline
+\end{tabular}
+\end{table}
+\begin{table}[h]
+%\centering
+\begin{tabular}{|l|l|}
+\hline
+          & $L$\\ \hline
+$T$     & 5,0 \\ \hline
+\end{tabular}
+\end{table} 
+
+Notice that we eliminated the weakly dominated strategy $M$ in our first step. We could have eliminated $B$ just as well, since it is also weakly dominated. Doing so then yields the following succession of eliminations:
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & 5,0   & 5,0 \\ \hline
+$M$     & 1,8 & 1,2  \\ \hline
+$B$		& 5,2	& 1,6 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+%\centering
+\begin{tabular}{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & 5,0   & 5,0 \\ \hline
+$B$     & 5,2 & 1,6  \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+%\centering
+\begin{tabular}{|l|l|}
+\hline
+          & $R$\\ \hline
+$T$     & 5,0 \\ \hline
+$B$     & 1,6\\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+%\centering
+\begin{tabular}{|l|l|}
+\hline
+          & $R$\\ \hline
+$T$     & 5,0 \\ \hline
+\end{tabular}
+\end{table} 
+
+Thus we can obtain both $(T,L)$ as well as $(T,R)$ by eliminating weakly dominated strategies, depending on how we start our elimination. This suffices to show that the process is order-dependent.
+
+\subsection*{c}
+\section*{Question 3}
+\subsection*{a}
+Consider the following two-player game.
+\begin{table}[h]
+%\centering
+\begin{tabular}{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & 100,1   & 2,2 \\ \hline
+$B$     & 0,0 & 1,100  \\ \hline
+\end{tabular}
+\end{table}
+With no correlation device in place $T$ is strictly dominant for Rowena and $R$ for Colin. The strategy profile $(T,R)$ is therefore a pure NE, it yields an expected payoff of $2$ for both. There are no NE in mixed strategies.\\
+By using a correlation device, however, both players can strictly improve their expected payoff. Assume they ask local Juju man to sacrifice a brown chicken at midnight before playing the game. The Juju man will examine the chicken's liver and tell them seperately whether it's dark red or bright purple. As everyone knows, either state of the chicken's liver obtains with a probability of $0.5$.\\ Rowena then plays the strategy ''If dark red, play $T$; if purple, play $B$.". Colin plays the strategy ''If dark red, play $L$; if purple, play $R$". The players' expected payoff under this strategy profile is $0.5*100+0.5*1=50.5$. 
+
+\end{document}
