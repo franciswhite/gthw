@@ -130,8 +130,18 @@ $T$     & 5,0 \\ \hline
 \end{table} 
 
 Thus we can obtain both $(T,L)$ as well as $(T,R)$ by eliminating weakly dominated strategies, depending on how we start our elimination. This suffices to show that the process is order-dependent.
-
 \subsection*{c}
+Consider the following normal-form game $G$, where $k$ is any natural number you please:
+\begin{table}[h]
+%\centering
+\begin{tabular}{|l|l|l|}
+\hline
+  & L   & R               \\ \hline
+T & k,k & 0,0             \\ \hline
+B & 0,0 & $k^{10},k^{10}$ \\ \hline
+\end{tabular}
+\end{table}
+Both $(T,L)$ and $(B,R)$ are NE. Social welfare under the first is $2k$; while the latter is the optimal strategy profile in terms of social welfare and yields $2k^{10}$. The price of anarchy is thus $\tfrac{2k^{10}}{2k}=k^{9}$. For any $k\in \mathbb{N}/{0}$ the PoA($G$)$=k^{9}>k$.
 \section*{Question 3}
 \subsection*{a}
 Consider the following two-player game.
@@ -144,7 +154,8 @@ $T$     & 100,1   & 2,2 \\ \hline
 $B$     & 0,0 & 1,100  \\ \hline
 \end{tabular}
 \end{table}
-With no correlation device in place $T$ is strictly dominant for Rowena and $R$ for Colin. The strategy profile $(T,R)$ is therefore a pure NE, it yields an expected payoff of $2$ for both. There are no NE in mixed strategies.\\
-By using a correlation device, however, both players can strictly improve their expected payoff. Assume they ask local Juju man to sacrifice a brown chicken at midnight before playing the game. The Juju man will examine the chicken's liver and tell them seperately whether it's dark red or bright purple. As everyone knows, either state of the chicken's liver obtains with a probability of $0.5$.\\ Rowena then plays the strategy ''If dark red, play $T$; if purple, play $B$.". Colin plays the strategy ''If dark red, play $L$; if purple, play $R$". The players' expected payoff under this strategy profile is $0.5*100+0.5*1=50.5$. 
+With no correlation device in place $T$ is strictly dominant for Rowena and $R$ for Colin. The strategy profile $(T,R)$ is therefore a pure NE, it yields an expected payoff of $2$ for both. Because strictly dominant strategies exist there are no NE in mixed strategies.\\
+By using a correlation device, however, both players can strictly improve their expected payoff. Assume they ask some local Juju man to sacrifice a brown chicken at midnight before playing the game. The Juju man will examine the chicken's liver and tell them seperately whether it's dark red or bright purple. As everyone knows, either state of the chicken's liver obtains with a probability of $0.5$.\\ If Rowena then plays the strategy ''If dark red, play $T$; if purple, play $B$." and Colin plays the strategy ''If dark red, play $L$; if purple, play $R$", then the players' expected payoff under this strategy profile is $0.5*100+0.5*1=50.5$.\\
+The sum of the expected payoff under this correlated equilibrium is equal to $2*50.5=101$ which strictly larger the $2*2=4$ under the pure NE $(T,R)$. We have thus found a game and a correlated equilibrium for which the sum of the expected utility is strictly higher than for any other NE of the game.
 
 \end{document}
