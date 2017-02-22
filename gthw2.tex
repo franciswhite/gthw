@@ -28,10 +28,10 @@ To find the NE, we have to find the strategies where no player who plays $d_1$ w
 &10=\sqrt{x}, \text{ for } x\in \mathbb{N}\cap \{0,1,...,200\}\\
 \implies &x = 100
 \end{align*}
-Thus there are $\binom{200}{100}$ NE where 100 players choose $d_1$ and 100 choose $d_2$. These consitute the only NE because for if $a>100$ go for $d_2$, then $\sqrt{a}>10$ and there is an incentive to choose $d_1$. Conversely, if $a<100$ then $\sqrt{a}<10$ and there is an incentive to play $d_2$. These being the only NE possible, they are also the worst NE. Social cost under these NE amount to $200*10=2000$.\\
-To find the optimal social solution we minimize the function $x*10+(200-148) * \sqrt{x}$ for the argument $x$ - how many agents choose $d_1$.
- This yields $x^* \approx 148$ which,  in its turn, implies a social cost of $148 * 10 + (200-148)* \sqrt{(200-148)} \approx 1855$.\\
-So the price of anarchy is roughly $\tfrac{2000}{1855}\approx 1.0782$.
+Thus there are $\binom{200}{100}$ NE where 100 players choose $d_1$ and 100 choose $d_2$. These consitute the only NE because if some number of players $a>100$ go for $d_2$, then $\sqrt{a}>10$ and there is an incentive to choose $d_1$. Conversely, if $a<100$ then $\sqrt{a}<10$ and there is an incentive to play $d_2$. The $(100,100)$ strategy profiles being the only NE possible, they are also the worst NE. Social cost under these NE amount to $100*10+100*\sqrt{100}=200*10=2000$.\\
+To find the optimal social solution we minimize the function $y*10+(200-y) * \sqrt{200-y}$ for the argument $y$ - how many agents choose $d_1$.
+ This yields $y^* \approx 156$ which,  in its turn, implies a social cost of $156 * 10 + (200-156)* \sqrt{(200-156)} \approx 1852$.\\
+So the price of anarchy is roughly $\tfrac{2000}{1852}\approx 1.08$.
 \subsection*{b}
 Consider a two-player game in normal form given below. The profile $(T,L)$ clearly is the only NE. This makes it also the worst NE in terms of social welfare. At the same time it is the best strategy profile in terms of social welfare. The price of anarchy is thus $\tfrac{5+5}{5+5}=1$. That is, there is no price to be paid for anarchy.
 \begin{table}[h]
