@@ -21,7 +21,41 @@
 \maketitle
 
 \section*{Question 1}
-
+\subsection*{a}
+Consider the games $<N,\boldsymbol{A},\boldsymbol{u}>$ on the left and $<N,\boldsymbol{A},\boldsymbol{u'}>$ on the right for any $\alpha_1,\alpha_2,\beta_1,\beta_2,\delta_1,\delta_2$ satisfying $\alpha_1+\alpha_2=c$,$\beta_1+\beta_2=c$, etc.
+\begin{table}[h]
+\centering
+\begin{tabular}[l]{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & $\alpha_1,\alpha_2$   & $\beta_1,\beta_2$ \\ \hline
+$B$		& $\gamma_1,\gamma_2$	& $\delta_1,\delta_2$ \\ \hline
+\end{tabular}
+\quad
+\begin{tabular}[r]{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & $\alpha_1-\tfrac{c}{2},\alpha_2-\tfrac{c}{2}$   & $\beta_1-\tfrac{c}{2},\beta_2-\tfrac{c}{2}$ \\ \hline
+$B$		& $\gamma_1-\tfrac{c}{2},\gamma_2-\tfrac{c}{2}$	& $\delta_1-\tfrac{c}{2},\delta_2-\tfrac{c}{2}$ \\ \hline
+\end{tabular}
+\end{table}
+To find the mixed NE of the left game we ask ourselves how the player need to randomize over their pure strategies in order to make each other indifferent. Colin's formal reasoning when pondering how to randomize over his pure strategies might take the following form:\\
+\begin{align*}
+EU(T)&=EU(B) \\
+q*\alpha_1+(1-q)*\beta_1&=q*\gamma_1+(1-q)*\delta_1 \\
+q*\alpha_1-q*\beta_1+\beta_1&=q*\gamma_1-q*\delta_1+\delta_1 \\
+q*(\alpha_1-\beta_1-\gamma_1+\delta_1)&=\delta_1-\beta_1 \\
+q &= \dfrac{\delta_1-\beta_1}{\alpha_1-\beta_1-\gamma_1+\delta_1}
+\end{align*}
+Now, notice that when considering the right-hand game we arrive at the same expression for Colin's probability of playing $L$. This is because the terms containing $\tfrac{c}{2}$ simply cancel each other from line 3 to 4:
+\begin{align}
+EU(T)&=EU(B) \\
+q*(\alpha_1-\tfrac{c}{2})+(1-q)*(\beta_1-\tfrac{c}{2})&=q*(\gamma_1-\tfrac{c}{2})+(1-q)*(\delta_1-\tfrac{c}{2}) \\
+q*\alpha_1-q*\tfrac{c}{2}-\tfrac{c}{2}+q*\tfrac{c}{2}-q*\beta_1+\beta_1&=q*\gamma_1-q*\tfrac{c}{2}-\tfrac{c}{2}+q*\tfrac{c}{2}-q*\delta_1+\delta_1 \\
+q*\alpha_1-q*\beta_1+\beta_1&=q*\gamma_1-q*\delta_1+\delta_1 \\
+q*(\alpha_1-\beta_1-\gamma_1+\delta_1)&=\delta_1-\beta_1 \\
+q &= \dfrac{\delta_1-\beta_1}{\alpha_1-\beta_1-\gamma_1+\delta_1}
+\end{align}
 
 \section*{Question 3}
 This Bayesian game can be formally represented as a tuple $<N,\boldsymbol{A}, \Theta, P, u>$. There are two players $N=\{1,2\}$, two actions available to each so that the set of action profiles is $\boldsymbol{A}=\{(T,L),(T,R),(B,L),(B,R)\}$. The players' type encapsulates which of two possible games they are playing. Rowena is certain about which game it is while Colin is not, so $\Theta_1=\{\star\}$,$\Theta_2=\{zero,two\}$. Thus $\Theta=\{(\star,zero),(\star,two)\}$ and $p: \Theta \rightarrow 0.5$. Finally, the utility function can be given most easily in two tables - one for the type profile $(\star,zero)$ and the other for $(\star,two)$.
