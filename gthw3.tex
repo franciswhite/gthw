@@ -21,34 +21,39 @@
 \maketitle
 
 \section*{Question 1}
-\subsection*{a}
-To find the NE, we have to find the strategies where no player who plays $d_1$ wants to switch to $d_2$ and vice versa. This is the case if the expected utility of playing $d_1$ equals that of playing $d_2$. Formally, this means solving the following equation for $x$ - the number of people playing $d_2$
-\begin{align*}
-&EU(d_1)=EU(d_2)\\
-&10=\sqrt{x}, \text{ for } x\in \mathbb{N}\cap \{0,1,...,200\}\\
-\implies &x = 100
-\end{align*}
-Thus there are many NE where 100 players choose $d_1$ and 100 choose $d_2$. These consitute NE because if some number of players $a>100$ go for $d_2$, then $\sqrt{a}>10$ and there is an incentive to choose $d_1$. Conversely, if $a<100$ then $\sqrt{a}<10$ and there is an incentive to play $d_2$. Also, strategy profiles where $101$ players play $d_1$ and $99$ go for $d_2$ are NE, since all the players on $d_1$ have no incentive of deviating to $d_2$ where they would then also have to pay $10$. The $(100,100)$ and $(101,99)$ strategy profiles being the only NE possible, the question then is which one is worse in terms of social cost. In fact, it's the $(100,100)$, for social cost under these NE amount to $100*10+100*\sqrt{100}=200*10=2000$ while only to roughly $1995$.\\
-To find the optimal social solution we minimize the function $y*10+(200-y) * \sqrt{200-y}$ for the argument $y$ - how many agents choose $d_1$.
- This yields $y^* \approx 156$ which,  in its turn, implies a social cost of $156 * 10 + (200-156)* \sqrt{(200-156)} \approx 1852$.\\
-So the price of anarchy is roughly $\tfrac{2000}{1852}\approx 1.08$.
-\subsection*{b}
-Consider a two-player game in normal form given below. The profile $(T,L)$ clearly is the only NE. This makes it also the worst NE in terms of social welfare. At the same time it is the best strategy profile in terms of social welfare. The price of anarchy is thus $\tfrac{5+5}{5+5}=1$. That is, there is no price to be paid for anarchy.
-\begin{table}[h]
-%\centering
-\begin{tabular}{|l|l|l|}
-\hline
-          & $L$ & $R$  \\ \hline
-$T$     & 5,5   & 0,0   \\ \hline
-$B$     & 0,0  & -5,-5  \\ \hline
-\end{tabular}
-\end{table}
+
 
 \section*{Question 3}
 This Bayesian game can be formally represented as a tuple $<N,\boldsymbol{A}, \Theta, P, u>$. There are two players $N=\{1,2\}$, two actions available to each so that the set of action profiles is $\boldsymbol{A}=\{(T,L),(T,R),(B,L),(B,R)\}$. The players' type encapsulates which of two possible games they are playing. Rowena is certain about which game it is while Colin is not, so $\Theta_1=\{\star\}$,$\Theta_2=\{zero,two\}$. Thus $\Theta=\{(\star,zero),(\star,two)\}$ and $p: \Theta \rightarrow 0.5$. Finally, the utility function can be given most easily in two tables - one for the type profile $(\star,zero)$ and the other for $(\star,two)$.
+\begin{table}[h]
+\centering
+\begin{tabular}[l]{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & 5,5   & 0,10 \\ \hline
+$B$		& 10,0	& 1,1 \\ \hline
+\end{tabular}
+\quad
+\begin{tabular}[r]{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$T$     & 5,5   & 2,10 \\ \hline
+$B$		& 10,2	& 1,1 \\ \hline
+\end{tabular}
+\end{table}
 
-
-
+Since Rowena will know which game is played, she can make conditional plans for either case. Her available pure strategies are then $S_1=\{AB,AT,Bi0-Ti2,Ti0,Bi2\}$, or in beautiful prose: ''Play always bottom, Play always top, Play bottom in case $\alpha=0$ and top in case $\alpha=2$, Play bottom in case $\alpha=2$ and top in case $\alpha=0$''. Colin, however, does not have the luxury of conditionalizing his actions on the type profile. His only two pure strategies are $S_2=\{L,R\}$. Given these individual strategy sets, we can represent the pure strategy space by means of a $4\times 2$ matrix. The boxes contain the players' expected payoffs associated with a given pure strategy profile. To provide an example, Colin's expected payoff of $3.5$ in the strategy profile $(Bi2-Ti0,L)$ is the result of him winning $5$ when the $\alpha=0$-game is played - because then Rowena plays $T$, according to her conditional strategy - and him winning $2$ when the $\alpha=2$-game is played - because then Rowena's contingency plan then foresees playing $B$. Each game being equiprobable with probability $0.5$ this yields an expected utility of $0.5*5+0.5*2=3.5$.
+\begin{table}[h]
+\centering
+\begin{tabular}[l]{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$AB$     & 10,1   & 1,1 \\ \hline
+$AT$		& 5,5	& 1,10 \\ \hline
+$Bi2-Ti0$	& 7.5,3.5 & 0.5, 5.5 \\ \hline
+$Bi0-Ti2$	& 7.5,2.5	& 1.5,5.5
+\end{tabular}
+\end{table}
 
 
 
