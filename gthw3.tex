@@ -14,6 +14,7 @@
 \usepackage{hyperref}
 \usepackage{comment}
 \usepackage[margin=1in]{geometry}
+\usepackage{float}
 
 \usepackage[normalem]{ulem}
 \date{}
@@ -22,45 +23,48 @@
 
 \section*{Question 1}
 \subsection*{a}
-Consider the games $<N,\boldsymbol{A},\boldsymbol{u}>$ on the left and $<N,\boldsymbol{A},\boldsymbol{u'}>$ on the right for any $\alpha_1,\alpha_2,\beta_1,\beta_2,\delta_1,\delta_2$ satisfying $\alpha_1+\alpha_2=c$,$\beta_1+\beta_2=c$, etc. $c$ denotes the constant sum of payoffs in the left hand game.
+First, note that given some strategy profile $\boldsymbol{s}$ $u'_i(\boldsymbol{s})$ differs from $u_i(\boldsymbol{s})$ always by $\tfrac{c}{2}$.
+\begin{align*}
+u'_i(\boldsymbol{s})=&\sum_{\boldsymbol{a}\in \boldsymbol{A}}[u_i(\boldsymbol{a})-\tfrac{c}{2})*\Pi_{j\in N} s_j(a_j)] \\
+=&\sum_{\boldsymbol{a}\in \boldsymbol{A}}[u_i(\boldsymbol{a} *\Pi_{j\in N} s_j(a_j)] - \sum_{\boldsymbol{a}\in \boldsymbol{A}}[\tfrac{c}{2} *\Pi_{j\in N} s_j(a_j )] \\
+=& u_i(\boldsymbol{s})-\tfrac{c}{2}*1 \\
+u'_i(\boldsymbol{s})=& u_i(\boldsymbol{s})-\tfrac{c}{2} \\
+\end{align*}
+Now, suppose there is a NE in some $\boldsymbol{s}$, because for both $i=1,2$ we have that $u_{i}(\boldsymbol{s})$ is greater or equal to $u_i(s_i,\boldsymbol{s}_{-1})$ for any $s_i$.\\
+ By what we showed above we know that $u_{i}(\boldsymbol{s}) - \tfrac{c}{2}=u'_{i}(\boldsymbol{s})$ and that $u_i(s_i, \boldsymbol{s}_{-i}) - \tfrac{c}{2}=u'_{i}(s_i,\boldsymbol{s}_{-i})$, for any $s_i$.\\
+So any NE in the original game will also be a NE in the corresponding zero-sum game. 
+\subsection*{b}
+Consider the following two games - on the left the original and on the right its transformation.
 \begin{table}[h]
 \centering
 \begin{tabular}[l]{|l|l|l|}
 \hline
           & $L$ & $R$  \\ \hline
-$T$     & $\alpha_1,\alpha_2$   & $\beta_1,\beta_2$ \\ \hline
-$B$		& $\gamma_1,\gamma_2$	& $\delta_1,\delta_2$ \\ \hline
+$T$     & $10,0$   & $5,5$ \\ \hline
+$B$		& $0,10$	& $8,2$ \\ \hline
 \end{tabular}
 \quad
 \begin{tabular}[r]{|l|l|l|}
 \hline
           & $L$ & $R$  \\ \hline
-$T$     & $\alpha_1-\tfrac{c}{2},\alpha_2-\tfrac{c}{2}$   & $\beta_1-\tfrac{c}{2},\beta_2-\tfrac{c}{2}$ \\ \hline
-$B$		& $\gamma_1-\tfrac{c}{2},\gamma_2-\tfrac{c}{2}$	& $\delta_1-\tfrac{c}{2},\delta_2-\tfrac{c}{2}$ \\ \hline
+$T$     & $5,-5$   & $0,0$ \\ \hline
+$B$		& $-5,5$	& $3,-3$ \\ \hline
 \end{tabular}
 \end{table}
-To find the mixed NE of the left game we ask ourselves how the player need to randomize over their pure strategies in order to make each other indifferent. Colin's formal reasoning when pondering how to randomize over his pure strategies might take the following form:\\
-\begin{align*}
-EU(T)&=EU(B) \\
-q*\alpha_1+(1-q)*\beta_1&=q*\gamma_1+(1-q)*\delta_1 \\
-q*\alpha_1-q*\beta_1+\beta_1&=q*\gamma_1-q*\delta_1+\delta_1 \\
-q*(\alpha_1-\beta_1-\gamma_1+\delta_1)&=\delta_1-\beta_1 \\
-q &= \dfrac{\delta_1-\beta_1}{\alpha_1-\beta_1-\gamma_1+\delta_1}
-\end{align*}
-Now, notice that when considering the right-hand game we arrive at the same expression for Colin's probability of playing $L$. This is because the terms containing $\tfrac{c}{2}$ simply cancel each other from line 3 to 4:
-\begin{align}
-EU(T)&=EU(B) \\
-q*(\alpha_1-\tfrac{c}{2})+(1-q)*(\beta_1-\tfrac{c}{2})&=q*(\gamma_1-\tfrac{c}{2})+(1-q)*(\delta_1-\tfrac{c}{2}) \\
-q*\alpha_1-q*\tfrac{c}{2}-\tfrac{c}{2}+q*\tfrac{c}{2}-q*\beta_1+\beta_1&=q*\gamma_1-q*\tfrac{c}{2}-\tfrac{c}{2}+q*\tfrac{c}{2}-q*\delta_1+\delta_1 \\
-q*\alpha_1-q*\beta_1+\beta_1&=q*\gamma_1-q*\delta_1+\delta_1 \\
-q*(\alpha_1-\beta_1-\gamma_1+\delta_1)&=\delta_1-\beta_1 \\
-q &= \dfrac{\delta_1-\beta_1}{\alpha_1-\beta_1-\gamma_1+\delta_1}
-\end{align}
-Because Rowena's reasoning is entirely analogous, her mixed strategy in equilibrium will also remain as it was. This goes to show that transforming a player's utilities in this way will not alter her opponent's mixed strategy in equilibrium.
-\subsection*{b}
+
+\noindent Say the players in these two-player, constant-sum games choose their strategy according to the following rules.
+
+ \fbox{%
+    \parbox{\textwidth}{%
+    If only one of the two actions is garantueed to yield a non-negative payof, then play that action. If both or none can yield a negative payoff, mix equally between the two.
+    }%
+   }
+
+\noindent Using this as a solution concept would give us the mixed strategies $((0.5,0.5),(0.5,0.5))$ in the original game, but $((1,0),(0.5,0.5))$ in the transformed game.
+
 \section*{Question 3}
-This Bayesian game can be formally represented as a tuple $<N,\boldsymbol{A}, \Theta, P, u>$. There are two players $N=\{1,2\}$, two actions available to each so that the set of action profiles is $\boldsymbol{A}=\{(T,L),(T,R),(B,L),(B,R)\}$. The players' type encapsulates which of two possible games they are playing. Rowena is certain about which game it is while Colin is not. We model this by letting Rowena observe one of her two types which tells her which game is going to be played before the game. Colin has only one type and can thus not distinguish between the games before choosing an action according to some strategy. So $\Theta_1=\{\zero, two\}$,$\Theta_2=\{\star\}$. Thus $\Theta=\{(\zero,\star),(two,\star)\}$ and $p: \Theta \rightarrow 0.5$. Finally, the utility function can be given most easily in two tables - one for the type profile $(zero,\star)$ and the other for $(two,\star)$.
-\begin{table}[h]
+This Bayesian game can be formally represented as a tuple $<N,\boldsymbol{A}, \Theta, P, u>$. There are two players $N=\{1,2\}$, two actions available to each so that the set of action profiles is $\boldsymbol{A}=\{(T,L),(T,R),(B,L),(B,R)\}$. The players' type encapsulates which of two possible games they are playing. Rowena is certain about which game it is while Colin is not. We model this by letting Rowena observe one of her two types which tells her which game is going to be played before the game. Colin has only one type and can thus not distinguish between the games before choosing an action according to some strategy. So $\Theta_1=\{\star, two\}$, $\Theta_2=\{\star\}$. Thus $\Theta=\{(zero,\star),(two,\star)\}$ and $p: \Theta \rightarrow \{0.5\}$. Finally, the utility function can be given most easily in two tables - one for the type profile $(zero,\star)$ and the other for $(two,\star)$.
+\begin{table}[H]
 \centering
 \begin{tabular}[l]{|l|l|l|}
 \hline
@@ -77,7 +81,7 @@ $B$		& 10,2	& 1,1 \\ \hline
 \end{tabular}
 \end{table}
 
-Since Rowena will know which game is played, she can make conditional plans for either case. Her available pure strategies are then $S_1=\{AB,AT,Bi0-Ti2,Ti0,Bi2\}$, or in beautiful prose: ''Play always bottom, Play always top, Play bottom in case $\alpha=0$ and top in case $\alpha=2$, Play bottom in case $\alpha=2$ and top in case $\alpha=0$''. Colin, however, does not have the luxury of conditionalizing his actions on the type profile. His only two pure strategies are $S_2=\{L,R\}$. Given these individual strategy sets, we can represent the pure strategy space by means of a $4\times 2$ matrix. The boxes contain the players' expected payoffs associated with a given pure strategy profile. To provide an example, Colin's expected payoff of $3.5$ in the strategy profile $(Bi2-Ti0,L)$ is the result of him winning $5$ when the $\alpha=0$-game is played - because then Rowena plays $T$, according to her conditional strategy - and him winning $2$ when the $\alpha=2$-game is played - because then Rowena's contingency plan then foresees playing $B$. Each game being equiprobable with probability $0.5$ this yields an expected utility of $0.5*5+0.5*2=3.5$.
+Since Rowena will know which game is played, she can make conditional plans for either case. Her available pure strategies are then $S_1=\{AB,AT,Bi0-Ti2,Ti0,Bi2\}$, or in beautiful prose: Play always bottom, Play always top, Play bottom in case $\alpha=0$ and top in case $\alpha=2$, Play bottom in case $\alpha=2$ and top in case $\alpha=0$. Colin, however, does not have the luxury of conditionalizing his actions on the type profile. His only two pure strategies are $S_2=\{L,R\}$. Given these individual strategy sets, we can represent the pure strategy space by means of a $4\times 2$ matrix. The boxes contain the players' expected payoffs associated with a given pure strategy profile. To provide an example, Colin's expected payoff of $3.5$ in the strategy profile $(Bi2-Ti0,L)$ is the result of him winning $5$ when the $\alpha=0$-game is played - because then Rowena plays $T$, according to her conditional strategy - and him winning $2$ when the $\alpha=2$-game is played - because then Rowena's contingency plan then foresees playing $B$. Each game being equiprobable with probability $0.5$ this yields an expected utility of $0.5*5+0.5*2=3.5$.
 \begin{table}[h]
 \centering
 \begin{tabular}[l]{|l|l|l|}
@@ -89,6 +93,7 @@ $Bi2-Ti0$	& 7.5, 3.5 & 0.5, 5.5 \\ \hline
 $Bi0-Ti2$	& 7.5, 2.5	& 1.5, 5.5 \\ \hline
 \end{tabular}
 \end{table}
+
 $Bi0-Ti2$ strictly dominates $AT$ for Rowena, so we can eliminate it. This leads to a simplified matrix where we can clearly see two pure NE: $(AB,L)$ and $(Bi0-Ti2,R)$.
 \begin{table}[h]
 \centering
@@ -100,4 +105,6 @@ $Bi2-Ti0$	& 7.5, 3.5 & 0.5, 5.5 \\ \hline
 $Bi0-Ti2$	& 7.5, 2.5	& 1.5, 5.5 \\ \hline
 \end{tabular}
 \end{table}
+\section*{Question 2}
+I colaborated with Max Rapp on the programming question.
 \end{document}
