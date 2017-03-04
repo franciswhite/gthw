@@ -1,0 +1,69 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+\title{%
+  Game Theory: Homework 4 \\
+  \large Silvan Hungerbuehler, 11394013}
+
+\usepackage{mathptmx} % "times new roman"
+\usepackage{amssymb}
+\usepackage{amsmath, amsthm}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{comment}
+\usepackage[margin=1in]{geometry}
+\usepackage{float}
+
+\usepackage[normalem]{ulem}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+\subsection*{a}
+\begin{align*}
+N=&\{1,2\} \\
+A=&\{small,pass,medium,big\} \\
+H=&\{A,B\}  &\text{$A$ is the root and $B$ the second player's choice node.}\\
+Z=&\{C,D,E\} \\
+\underline{i}=&\begin{cases}
+A\rightarrow 1 \\
+B \rightarrow 2 
+\end{cases}&\underline{i}: H\rightarrow N,\text{ maps internal nodes to players} \\
+\underline{A}=&\begin{cases}
+A\rightarrow\{small,pass\} \\
+B\rightarrow\{medium,big\} 
+\end{cases} &\underline{A}:H\rightarrow 2^A,\text{ maps internal nodes to available actions} \\
+\sigma=& \begin{cases}
+\{A,small\}\rightarrow E \\
+\{A,pass\}\rightarrow B\\
+\{B,medium\}\rightarrow C\\
+\{B,big\}\rightarrow D
+\end{cases}  &\sigma :H\times A\rightarrow H\cup Z\\
+u=&(u_1,u_2)\\
+&u_1=\begin{cases}
+E\rightarrow 10\\
+C\rightarrow 20\\
+D\rightarrow 0
+\end{cases}\\
+&u_2=\begin{cases}
+E\rightarrow 0\\
+C\rightarrow 20\\
+D\rightarrow 30
+\end{cases}
+\end{align*}
+
+\begin{table}[h]
+\centering
+\begin{tabular}[l]{|l|l|l|}
+\hline
+          & $L$ & $R$  \\ \hline
+$AB$     & 10, 1   & 1, 1 \\ \hline
+$Bi2-Ti0$	& 7.5, 3.5 & 0.5, 5.5 \\ \hline
+\end{tabular}
+\end{table}
+
+\section*{Question 2}
+\end{document}
