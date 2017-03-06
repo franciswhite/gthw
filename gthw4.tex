@@ -15,6 +15,8 @@
 \usepackage{comment}
 \usepackage[margin=1in]{geometry}
 \usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 
 \usepackage[normalem]{ulem}
 \date{}
@@ -68,4 +70,93 @@ The only pure (subgame-perfect) NE is $(S,B)$. Since $Big$ strictly dominates $M
 \subsection*{d} 
 Solving the linear equations that represent the players' indifference for $p$ and $q$ yields the mixed NE $[(0,1),(0.5,0.5)]$.
 \section*{Question 2}
+
+      
+
+  
+\begin{table}[h]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{|l|l|l|}
+\hline
+      & $A$   & $B$ \\ \hline
+$L,X$ & (1,1) &     \\ \hline
+$L,Y$ & 0     & 0   \\ \hline
+$R,X$ &       &     \\ \hline
+$R,Y$ &       &     \\ \hline
+\end{tabular}
+\end{table}
+ \begin{figure}
+ 	\begin{center}
+    \small
+    \begin{tikzpicture}[thin,
+      level 1/.style={sibling distance=40mm},
+      level 2/.style={sibling distance=25mm},
+      level 3/.style={sibling distance=15mm},
+      every circle node/.style={minimum size=1.5mm,inner sep=0mm}]
+      
+      \node[circle,draw,label=above:$1$] (root) {}
+        child { node [circle,fill,label=above:$2$] {}
+          child { 
+            node [circle,fill] (node-C) {}
+            	child {
+            		node {$1,1$}
+            		edge from parent
+            			node [left] {$X$}}
+            	child {
+            		node {$1,1$}
+            		edge from parent
+            			node [right] {$Y$}}
+				edge from parent              	
+              	node[left] {$A$}}
+          child { 
+            node [circle,fill] (node-D) {}
+            	child {
+            		node {$1,1$}
+            		edge from parent
+            			node [left] {$X$}}
+            	child {
+            		node {$1,1$}
+            		edge from parent
+            			node [right] {$Y$}}
+            	edge from parent
+              	node[right] {$B$}}
+          edge from parent
+            node[left] {$L$}}
+        child { node [circle,fill,label=above:$2$] {}
+          child { 
+            node[circle,fill] (node-A) {}
+              child {
+                node {$3,0$}
+                edge from parent
+                  node[left] {$X$}}
+              child {
+                 node {$8,5$}
+                 edge from parent
+                   node[right] {$Y$}}
+              edge from parent
+                node[left] {$A$}}
+          child { 
+            node[circle,fill] (node-B) {}
+              child {
+                node {$4,6$}
+                edge from parent
+                  node[left] {$X$}}
+              child {
+                 node {$2,1$}
+                 edge from parent
+                   node[right] {$Y$}}
+              edge from parent
+                node[right] {$B$}}
+           edge from parent
+             node[right] {$W$}};
+      \draw [dashed] (node-A) -- (node-B) 
+         node[midway,above] {$1$};
+      \draw [dashed] (node-C) -- (node-D) 
+         node[midway,above] {$1$};
+    \end{tikzpicture}
+    \end{center}
+    \caption{Example: Extensive-form game $\boldsymbol{G''}$}
+  \end{figure}
 \end{document}
