@@ -70,6 +70,23 @@ The only pure (subgame-perfect) NE is $(S,B)$. Since $Big$ strictly dominates $M
 \subsection*{d} 
 Solving the linear equations that represent the players' indifference for $p$ and $q$ yields the mixed NE $[(0,1),(0.5,0.5)]$.
 \section*{Question 2}
+We want to translate a two-player, normal-form game to an extensive-form game with imperfect information.\\
+$<N',\boldsymbol{A}',\boldsymbol{u}'> \implies <N,\boldsymbol{A}, H, Z, \underline{i},\underline{A},\sigma,\boldsymbol{u},\sim>$
+
+\noindent \begin{align}
+&N' \implies N & N=\{1,2\} \text{ by assumption}\\
+&\boldsymbol{A}'=\{A_1,A_2\} \implies \Cup_i A_i &\text{} \\
+&H=\{1^*,...,(1+|A_1|)^*\} &\text{$1^*$ denotes the root, the rest are choice nodes for Player 2} \\
+&Z=\{1^{\#},2^{\#},...,(|A_1| \times |A_2|)^\# \}\\
+&\underline{i}= \begin{cases}
+\{1^*\} \rightarrow 1 \\
+H-\{1\} \rightarrow 2 \end{cases} & \text{at root Player 1, at all other choice nodes Player 2}\\
+&\underline{A}= \begin{cases}
+\{1^*\}\rightarrow \{A_1\}  \\
+H-\{1\} \rightarrow \{A_2\} \end{cases} & \text{at root Player 1's action, at all other choice nodes Player 2's}\\
+\sigma = 
+&\boldsymbol{u}'=(u_1',u_2') \implies u\\
+\end{align}
 
  \begin{figure}[h]
  	\begin{center}
@@ -117,7 +134,6 @@ Solving the linear equations that represent the players' indifference for $p$ an
     \end{center}
     \caption{Extensive-form game $\boldsymbol{G}$}
   \end{figure}
-     
 \begin{table}[h]
 \centering
 \caption{Normal-form game $\boldsymbol{G'}$}
@@ -131,7 +147,6 @@ $R,X$ & 1, 1      & 4, 6    \\ \hline
 $R,Y$ &  8, 5     & 2, 1    \\ \hline
 \end{tabular}
 \end{table}
-
  \begin{figure}[h]
  	\begin{center}
     \small
@@ -205,4 +220,5 @@ $R,Y$ &  8, 5     & 2, 1    \\ \hline
     \caption{Extensive-form game $\boldsymbol{G''}$}
   \end{figure}
 The two extensive-form games are equivalent in the sense that the players can choose the same strategies and all strategy profiles yield the same payoffs.
+
 \end{document}
