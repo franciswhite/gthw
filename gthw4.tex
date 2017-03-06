@@ -73,20 +73,27 @@ Solving the linear equations that represent the players' indifference for $p$ an
 We want to translate a two-player, normal-form game to an extensive-form game with imperfect information.\\
 $<N',\boldsymbol{A}',\boldsymbol{u}'> \implies <N,\boldsymbol{A}, H, Z, \underline{i},\underline{A},\sigma,\boldsymbol{u},\sim>$
 
-\noindent \begin{align}
+\noindent The following elements in the extensive-game tuple are straightforward to translate. Note that $1^*$ denotes a special node - the root - while $1^{\#}$ is a regular terminal node like any other element in $Z$.
+ \begin{align}
 &N' \implies N & N=\{1,2\} \text{ by assumption}\\
 &\boldsymbol{A}'=\{A_1,A_2\} \implies \Cup_i A_i &\text{} \\
 &H=\{1^*,...,(1+|A_1|)^*\} &\text{$1^*$ denotes the root, the rest are choice nodes for Player 2} \\
+&\sim=(\sim_1,\sim_2), \text{ where $\sim_1=1^*$ and $\sim_2=H-\{1^*\}$} &\text{all relevant choice nodes are indistinguishable for Player 2}\\
 &Z=\{1^{\#},2^{\#},...,(|A_1| \times |A_2|)^\# \}\\
 &\underline{i}= \begin{cases}
 \{1^*\} \rightarrow 1 \\
 H-\{1\} \rightarrow 2 \end{cases} & \text{at root Player 1, at all other choice nodes Player 2}\\
 &\underline{A}= \begin{cases}
 \{1^*\}\rightarrow \{A_1\}  \\
-H-\{1\} \rightarrow \{A_2\} \end{cases} & \text{at root Player 1's action, at all other choice nodes Player 2's}\\
-\sigma = 
-&\boldsymbol{u}'=(u_1',u_2') \implies u\\
+H-\{1\} \rightarrow \{A_2\} \end{cases} & \text{at root Player 1's action, at all other choice nodes Player 2's}
 \end{align}
+The successor function and the utility function are a little trickier. To avoid excessive formalism, I will use mostly prose.\\
+First, $\sigma$ maps from the root to a different element of $H$ for each action available to Player 1 at the root. As there is exactly one more element in $H$ than there are actions available to Player 1, every element except the root in $H$ will be mapped to exactly once.\\
+Second, $\sigma$ maps from each element in $H$ except for the root to as many elements in $Z$ as Player 2 has actions available. Each element in $Z$ will thus be mapped to exactly by one combination of element in $H$ and action chosen by Player 2.\\
+Third, the action profile thus specified - from root to element in $H$ by Player 1's action, and from element in $H$ to unique element in $Z$ - corresponds to an action profile in the original normal-form game. There it was associated with a payoff for each player. Since the elements in $Z$ are uniquely determined by the these action profiles we can simply use the original utility function $\boldsymbol{u}':\boldsymbol{A}\rightarrow \mathbb{R}$ to specify the extensive-form utility function $\boldsymbol{u}':Z\rightarrow \mathbb{R}$.\\
+
+\noindent \textbf{Different, yet equivalent, extensive-forms}\\
+Consider the following games $\boldsymbol{G},\boldsymbol{G'},\boldsymbol{G''}$ to see transforming to and from extensive-form can yield different extensive-forms. The two extensive-form games are equivalent in the sense that the players can choose the same strategies and all strategy profiles yield the same payoffs.
 
  \begin{figure}[h]
  	\begin{center}
@@ -219,6 +226,4 @@ $R,Y$ &  8, 5     & 2, 1    \\ \hline
     \end{center}
     \caption{Extensive-form game $\boldsymbol{G''}$}
   \end{figure}
-The two extensive-form games are equivalent in the sense that the players can choose the same strategies and all strategy profiles yield the same payoffs.
-
 \end{document}
