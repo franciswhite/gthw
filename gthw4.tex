@@ -67,9 +67,9 @@ $Small$     & 10, 0   & 10, 0 \\ \hline
 $Pass$	& 20,20 & 0, 30 \\ \hline
 \end{tabular}
 \end{table}
-The only pure (subgame-perfect) NE is $(S,B)$. Since $Big$ strictly dominates $Medium$ for Colin, he therefore won't deviate. And Rowena has no incentive to do so either in that strategy profile, because $10>0$.
+The only pure (subgame-perfect) NE is $(S,B)$. Since $Big$ strictly dominates $Medium$ for Colin, he therefore won't deviate. And Rowena has no incentive to do so either in that strategy profile, because $10>0$. Note that we have found the only(!) pure NE by inspecting the normal-form. In this case this is not an issue because we have found only one NE. Since there must be one subgame-perfect NE, the possibility of this being a non-subgame-perfect NE in the normal-form is excluded.
 \subsection*{d} 
-Solving the linear equations that represent the players' indifference for $p$ and $q$ yields the mixed NE $[(0,1),(0.5,0.5)]$.
+Solving the linear equations that represent the players' indifference for $p$ - probability of playing $Small$ - and $q$ - probability of playing $Medium$ - yields the mixed NE $[(1,0),(q,1-q)]$, where $q\in [0,0.5]$.
 \section*{Question 2}
 We want to translate a two-player, normal-form game to an extensive-form game with imperfect information.\\
 $<N',\boldsymbol{A}',\boldsymbol{u}'> \implies <N,\boldsymbol{A}, H, Z, \underline{i},\underline{A},\sigma,\boldsymbol{u},\sim>$
@@ -233,5 +233,6 @@ First, observe that any leaf is is reachable by a unique path from the root (pro
 Given any leaf $t$, there is a unique path $K_t$ from the root to $t$. We can compute the probability of $K_t$ being followed under the full profile $\bm{\alpha}=\bm{\alpha_{-i}},s_i^*$ by multiplying $s_i^*(h)(a)$ for all nodes where $i$ gets to play and the respective action $a$ that corresponds to $K_t$. That is, we multiply the probabilities of player $i$ playing the actions on $K_t$ under $s_i^*$ as well as the probabilities - either $1$ or $0$ - of the other players playing the actions on $K_t$ where they get to choose. We can do this for every leaf $z\in Z$ and its corresponding path $K_z$. Given the $\bm{\alpha_{-1}}$, we can thus define a mixed strategy for player $i$ that is outcome-equivalent to the behavioral strategy, by specifiying with which probability she will chose to play a given pure strategy $\alpha_i$. Concretely, the actions taken by $i$ on some path constitute $\alpha_i$ and the probability \\
 
 $A_i$ is the set of agent $i$'s pure strategies.\\
+$p(t|s_1^*,\bm{\alpha_{-1}}) = p(t|s_1,\bm{\alpha_{-1}})$
 
 \end{document}
