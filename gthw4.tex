@@ -17,6 +17,7 @@
 \usepackage{float}
 \usepackage{tikz}
 \usetikzlibrary{positioning}
+\usepackage{bm}
 
 \usepackage[normalem]{ulem}
 \date{}
@@ -74,7 +75,7 @@ We want to translate a two-player, normal-form game to an extensive-form game wi
 $<N',\boldsymbol{A}',\boldsymbol{u}'> \implies <N,\boldsymbol{A}, H, Z, \underline{i},\underline{A},\sigma,\boldsymbol{u},\sim>$
 
 \noindent The following elements in the extensive-game tuple are straightforward to translate. Note that $1^*$ denotes a special node - the root - while $1^{\#}$ is a regular terminal node like any other element in $Z$.
- \begin{align}
+ \begin{align*}
 &N' \implies N & N=\{1,2\} \text{ by assumption}\\
 &\boldsymbol{A}'=\{A_1,A_2\} \implies \Cup_i A_i &\text{} \\
 &H=\{1^*,...,(1+|A_1|)^*\} &\text{$1^*$ denotes the root, the rest are choice nodes for Player 2} \\
@@ -86,7 +87,7 @@ H-\{1\} \rightarrow 2 \end{cases} & \text{at root Player 1, at all other choice 
 &\underline{A}= \begin{cases}
 \{1^*\}\rightarrow \{A_1\}  \\
 H-\{1\} \rightarrow \{A_2\} \end{cases} & \text{at root Player 1's action, at all other choice nodes Player 2's}
-\end{align}
+\end{align*}
 The successor function and the utility function are a little trickier. To avoid excessive formalism, I will use mostly prose.\\
 First, $\sigma$ maps from the root to a different element of $H$ for each action available to Player 1 at the root. As there is exactly one more element in $H$ than there are actions available to Player 1, every element except the root in $H$ will be mapped to exactly once.\\
 Second, $\sigma$ maps from each element in $H$ except for the root to as many elements in $Z$ as Player 2 has actions available. Each element in $Z$ will thus be mapped to exactly by one combination of element in $H$ and action chosen by Player 2.\\
@@ -139,11 +140,11 @@ Consider the following games $\boldsymbol{G},\boldsymbol{G'},\boldsymbol{G''}$ t
          node[midway,above] {$1$};
     \end{tikzpicture}
     \end{center}
-    \caption{Extensive-form game $\boldsymbol{G}$}
+    \caption{Extensive-form game $\bm{G}$}
   \end{figure}
 \begin{table}[h]
 \centering
-\caption{Normal-form game $\boldsymbol{G'}$}
+\caption{Normal-form game $\bm{G'}$}
 \label{my-label}
 \begin{tabular}{|l|l|l|}
 \hline
@@ -224,6 +225,13 @@ $R,Y$ &  8, 5     & 2, 1    \\ \hline
          node[midway,above] {$1$};
     \end{tikzpicture}
     \end{center}
-    \caption{Extensive-form game $\boldsymbol{G''}$}
+    \caption{Extensive-form game $\bm{G''}$}
   \end{figure}
+\section*{Question 3}
+Take any partial profile $\bm{\alpha_{-i}}$ of pure strategies for the other players. Total losers, not gonna win. Given any behavioral strategy $s_i^*$ for player $i$ we want to find an outcome equivalent mixed strategy $s_i$. To put it differently, given the partial profile $\bm{\alpha_{-i}}$ and some behavioral strategy $s_i^*$ any leaf of the game-tree has a specific probability of being reached. We now need to find the element $s_i$ of the set of all possible mixed strategies $\Pi$ which assigns the exact same probability to arriving at the specific leaf of our game-tree as the behavioral strategy.\\
+First, observe that any leaf is is reachable by a unique path from the root (property of trees, $\sigma$ is injective etc.).\\
+Given any leaf $t$, there is a unique path $K_t$ from the root to $t$. We can compute the probability of $K_t$ being followed under the full profile $\bm{\alpha}=\bm{\alpha_{-i}},s_i^*$ by multiplying $s_i^*(h)(a)$ for all nodes where $i$ gets to play and the respective action $a$ that corresponds to $K_t$. That is, we multiply the probabilities of player $i$ playing the actions on $K_t$ under $s_i^*$ as well as the probabilities - either $1$ or $0$ - of the other players playing the actions on $K_t$ where they get to choose. We can do this for every leaf $z\in Z$ and its corresponding path $K_z$. Given the $\bm{\alpha_{-1}}$, we can thus define a mixed strategy for player $i$ that is outcome-equivalent to the behavioral strategy, by specifiying with which probability she will chose to play a given pure strategy $\alpha_i$. Concretely, the actions taken by $i$ on some path constitute $\alpha_i$ and the probability \\
+
+$A_i$ is the set of agent $i$'s pure strategies.\\
+
 \end{document}
