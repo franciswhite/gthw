@@ -82,7 +82,7 @@ $<N',\boldsymbol{A}',\boldsymbol{u}'> \implies <N,\boldsymbol{A}, H, Z, \underli
 &N' \implies N & N=\{1,2\} \text{ by assumption}\\
 &\boldsymbol{A}'=\{A_1,A_2\} \implies \Cup_i A_i &\text{} \\
 &H=\{1^*,...,(1+|A_1|)^*\} &\text{$1^*$ denotes the root, the rest are choice nodes for Player 2} \\
-&\sim=(\sim_1,\sim_2), \text{ where $\sim_1=1^*$ and $\sim_2=H-\{1^*\}$} &\text{all relevant choice nodes are indistinguishable for Player 2}\\
+&\sim=(\sim_1,\sim_2) &\text{where in $\sim_1$ only root is related to itself and in $\sim_2$ all other choice nodes are related to each other}\\
 &Z=\{1^{\#},2^{\#},...,(|A_1| \times |A_2|)^\# \}\\
 &\underline{i}= \begin{cases}
 \{1^*\} \rightarrow 1 \\
@@ -231,14 +231,12 @@ $R,Y$ &  8, 5     & 2, 1    \\ \hline
     \caption{Extensive-form game $\bm{G''}$}
   \end{figure}
 \section*{Question 3}
-Take any partial profile $\bm{\alpha_{-i}}$ of pure strategies for the other players. Given any behavioral strategy $s_i^*$ for player $i$ we want to find an outcome equivalent mixed strategy $s_i$. \\
-Given the partial profile $\bm{\alpha_{-i}}$ and some behavioral strategy $s_i^*$ any leaf of the game-tree has a known probability of being reached. We now need to find the element $s_i$ of the set of all possible mixed strategies $\Pi$ which assigns the exact same probability to arriving at the specific leaf of our game-tree as the behavioral strategy. If $t$ is any leaf of the game tree, our mixed strategy needs to satisfy that $p(t|s_1^*,\bm{\alpha_{-1}}) = p(t|s_1,\bm{\alpha_{-1}})$.
+Take any partial profile $\bm{\alpha_{-i}}$ of pure strategies for the other players. Given any behavioral strategy $s_i^*$ for player $i$ we want to find an outcome equivalent mixed strategy $s_i$. A mixed strategy for player $i$ is a probability distribution over all pure strategy profiles of $i$. $\alpha_i$.\\
+Given the partial profile $\bm{\alpha_{-i}}$ and some behavioral strategy $s_i^*$ any leaf of the game-tree has a known probability of being reached. We now need to find the element $s_i$ of the set of all possible mixed strategies $\Pi$ which assigns the exact same probability to arriving at the specific leaf of our game-tree as the behavioral strategy. If $t$ is any leaf of the game tree, our mixed strategy needs to satisfy that $p(t|s_i^*,\bm{\alpha_{-i}}) = p(t|s_i,\bm{\alpha_{-i}})$.
 
 \noindent First, observe that any leaf is is reachable by a unique path from the root (property of trees, $\sigma$ is injective etc.).\\
-Given any leaf $t$, there is a unique path $K_t$ from the root to $t$. We can compute the probability of $K_t$ being followed under the full profile $\bm{\alpha}=(\bm{\alpha_{-i}},s_i^*)$. We do so by multiplying $s_i^*(h)(a)$ for all nodes where $i$ gets to play and the respective action $a$ that corresponds to $K_t$, then we multiply the probabilities of player $i$ playing the actions on $K_t$ under $s_i^*$ with the probabilities  of the other players playing the actions on $K_t$ where they get to choose- either $1$ or $0$. Thus we arrive at $p(t|s_1^*,\bm{\alpha_{-1}})$. We can do this for every leaf $z\in Z$ and its corresponding path $K_z$. \\
-Given some $\bm{\alpha_{-1}}$, we can then define a mixed strategy for player $i$ that is outcome-equivalent to the behavioral strategy, by specifiying with which probability she will choose exactly that pure strategy $\alpha_i$ that leads to $t$. Concretely, the actions taken by $i$ on $K_t$ constitute the pure strategy $\alpha_i$ and the probability of playing it in $s_i$ is computed by multiplying the probabilities of playing the actions in $\alpha_i$ where $i$ gets to decide in $s_i^*$.\\
+Given any leaf $t$, there is a unique path $K_t$ from the root to $t$. We can compute the probability of $K_t$ being followed under the full profile $\bm{\alpha}=(\bm{\alpha_{-i}},s_i^*)$. We do so by multiplying $s_i^*(h)(a)$ for all nodes where $i$ gets to play and the respective action $a$ that corresponds to $K_t$, then we multiply the probabilities of player $i$ playing the actions on $K_t$ under $s_i^*$ with the probabilities  of the other players playing the actions on $K_t$ where they get to choose- either $1$ or $0$. We can take the product in this way because we are assuming that the choices at different nodes are probabilistically independent. Thus we arrive at $p(t|s_i^*,\bm{\alpha_{-i}})$. We can do this for every leaf $z\in Z$ and its corresponding path $K_z$. \\
+Given some $\bm{\alpha_{-i}}$, we can then define a mixed strategy for player $i$ that is outcome-equivalent to the behavioral strategy, by specifiying with which probability she will choose exactly that pure strategy $\alpha_i$ that leads to $t$. Concretely, the actions taken by $i$ on $K_t$ constitute the pure strategy $\alpha_i$ (for $i$'s choice nodes never visited under $\bm{\alpha}$ we can choose $i$'s actions arbitrarily, so as to complete $\alpha_i$); the probability of playing $\alpha_i$ in $s_i$ is computed by multiplying the probabilities of playing the actions in $\alpha_i$ where $i$ gets to decide in $s_i^*$.\\
 We can thus find an outcome-equivalent mixed strategy for any given behavioral strategy.
-
-$A_i$ is the set of agent $i$'s pure strategies.\\
 
 \end{document}
