@@ -58,6 +58,7 @@ D\rightarrow 30
 \end{cases}
 \end{align*}
 \subsection*{b \& c}
+Consider the following translation to normal-form:
 \begin{table}[h]
 \centering
 \begin{tabular}[l]{|l|l|l|}
@@ -67,9 +68,11 @@ $Small$     & 10, 0   & 10, 0 \\ \hline
 $Pass$	& 20,20 & 0, 30 \\ \hline
 \end{tabular}
 \end{table}
-The only pure (subgame-perfect) NE is $(S,B)$. Since $Big$ strictly dominates $Medium$ for Colin, he therefore won't deviate. And Rowena has no incentive to do so either in that strategy profile, because $10>0$. Note that we have found the only(!) pure NE by inspecting the normal-form. In this case this is not an issue because we have found only one NE. Since there must be one subgame-perfect NE, the possibility of this being a non-subgame-perfect NE in the normal-form is excluded.
+\noindent The only pure (subgame-perfect) NE is $(S,B)$. Since $Big$ strictly dominates $Medium$ for Colin, he therefore won't deviate. And Rowena has no incentive to do so either in that strategy profile, because $10>0$. Note that we have found the only(!) pure NE by inspecting the normal-form. In this case this is not an issue because we have found only one NE. Since there must be one subgame-perfect NE, the possibility of this being a non-subgame-perfect NE in the normal-form is excluded. (Backwards-induction yields the same pure NE.)
 \subsection*{d} 
-Solving the linear equations that represent the players' indifference for $p$ - probability of playing $Small$ - and $q$ - probability of playing $Medium$ - yields the mixed NE $[(1,0),(q,1-q)]$, where $q\in [0,0.5]$.
+Let $p$ denote Player 1's probability of playing $Small$ and $q$ Player 2's probability of playing $Medium$. We get the the following mixed and pure NE:\\
+ $[(1,0),(q,1-q)]$, where $q\leq 0.5\in [0,1]$.\\
+$[(1,0),(0,1)]$, as determined above.
 \section*{Question 2}
 We want to translate a two-player, normal-form game to an extensive-form game with imperfect information.\\
 $<N',\boldsymbol{A}',\boldsymbol{u}'> \implies <N,\boldsymbol{A}, H, Z, \underline{i},\underline{A},\sigma,\boldsymbol{u},\sim>$
@@ -85,18 +88,18 @@ $<N',\boldsymbol{A}',\boldsymbol{u}'> \implies <N,\boldsymbol{A}, H, Z, \underli
 \{1^*\} \rightarrow 1 \\
 H-\{1\} \rightarrow 2 \end{cases} & \text{at root Player 1, at all other choice nodes Player 2}\\
 &\underline{A}= \begin{cases}
-\{1^*\}\rightarrow \{A_1\}  \\
-H-\{1\} \rightarrow \{A_2\} \end{cases} & \text{at root Player 1's action, at all other choice nodes Player 2's}
+\{1^*\}\rightarrow A_1  \\
+H-\{1\} \rightarrow A_2 \end{cases} & \text{at root the set of Player 1's actions, at all other choice nodes Player 2's}
 \end{align*}
 The successor function and the utility function are a little trickier. To avoid excessive formalism, I will use mostly prose.\\
 First, $\sigma$ maps from the root to a different element of $H$ for each action available to Player 1 at the root. As there is exactly one more element in $H$ than there are actions available to Player 1, every element except the root in $H$ will be mapped to exactly once.\\
 Second, $\sigma$ maps from each element in $H$ except for the root to as many elements in $Z$ as Player 2 has actions available. Each element in $Z$ will thus be mapped to exactly by one combination of element in $H$ and action chosen by Player 2.\\
-Third, the action profile thus specified - from root to element in $H$ by Player 1's action, and from element in $H$ to unique element in $Z$ - corresponds to an action profile in the original normal-form game. There it was associated with a payoff for each player. Since the elements in $Z$ are uniquely determined by the these action profiles we can simply use the original utility function $\boldsymbol{u}':\boldsymbol{A}\rightarrow \mathbb{R}$ to specify the extensive-form utility function $\boldsymbol{u}':Z\rightarrow \mathbb{R}$.\\
+Third, the "action path" thus specified - from root to element in $H$ by Player 1's action, and from element in $H$ to unique element in $Z$ - corresponds to an action profile in the original normal-form game. There it was associated with a payoff for each player. Since the elements in $Z$ are uniquely determined by the the "action paths" we can simply use the original utility function $\boldsymbol{u}':\boldsymbol{A}\rightarrow \mathbb{R}$ to specify the extensive-form utility function $\boldsymbol{u}':Z\rightarrow \mathbb{R}$.\\
 
 \noindent \textbf{Different, yet equivalent, extensive-forms}\\
 Consider the following games $\boldsymbol{G},\boldsymbol{G'},\boldsymbol{G''}$ to see transforming to and from extensive-form can yield different extensive-forms. The two extensive-form games are equivalent in the sense that the players can choose the same strategies and all strategy profiles yield the same payoffs.
 
- \begin{figure}[h]
+ \begin{figure}[H]
  	\begin{center}
     \small
     \begin{tikzpicture}[thin,
@@ -142,7 +145,7 @@ Consider the following games $\boldsymbol{G},\boldsymbol{G'},\boldsymbol{G''}$ t
     \end{center}
     \caption{Extensive-form game $\bm{G}$}
   \end{figure}
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Normal-form game $\bm{G'}$}
 \label{my-label}
@@ -155,7 +158,7 @@ $R,X$ & 1, 1      & 4, 6    \\ \hline
 $R,Y$ &  8, 5     & 2, 1    \\ \hline
 \end{tabular}
 \end{table}
- \begin{figure}[h]
+ \begin{figure}[H]
  	\begin{center}
     \small
     \begin{tikzpicture}[thin,
@@ -228,11 +231,14 @@ $R,Y$ &  8, 5     & 2, 1    \\ \hline
     \caption{Extensive-form game $\bm{G''}$}
   \end{figure}
 \section*{Question 3}
-Take any partial profile $\bm{\alpha_{-i}}$ of pure strategies for the other players. Total losers, not gonna win. Given any behavioral strategy $s_i^*$ for player $i$ we want to find an outcome equivalent mixed strategy $s_i$. To put it differently, given the partial profile $\bm{\alpha_{-i}}$ and some behavioral strategy $s_i^*$ any leaf of the game-tree has a specific probability of being reached. We now need to find the element $s_i$ of the set of all possible mixed strategies $\Pi$ which assigns the exact same probability to arriving at the specific leaf of our game-tree as the behavioral strategy.\\
-First, observe that any leaf is is reachable by a unique path from the root (property of trees, $\sigma$ is injective etc.).\\
-Given any leaf $t$, there is a unique path $K_t$ from the root to $t$. We can compute the probability of $K_t$ being followed under the full profile $\bm{\alpha}=\bm{\alpha_{-i}},s_i^*$ by multiplying $s_i^*(h)(a)$ for all nodes where $i$ gets to play and the respective action $a$ that corresponds to $K_t$. That is, we multiply the probabilities of player $i$ playing the actions on $K_t$ under $s_i^*$ as well as the probabilities - either $1$ or $0$ - of the other players playing the actions on $K_t$ where they get to choose. We can do this for every leaf $z\in Z$ and its corresponding path $K_z$. Given the $\bm{\alpha_{-1}}$, we can thus define a mixed strategy for player $i$ that is outcome-equivalent to the behavioral strategy, by specifiying with which probability she will chose to play a given pure strategy $\alpha_i$. Concretely, the actions taken by $i$ on some path constitute $\alpha_i$ and the probability \\
+Take any partial profile $\bm{\alpha_{-i}}$ of pure strategies for the other players. Given any behavioral strategy $s_i^*$ for player $i$ we want to find an outcome equivalent mixed strategy $s_i$. \\
+Given the partial profile $\bm{\alpha_{-i}}$ and some behavioral strategy $s_i^*$ any leaf of the game-tree has a known probability of being reached. We now need to find the element $s_i$ of the set of all possible mixed strategies $\Pi$ which assigns the exact same probability to arriving at the specific leaf of our game-tree as the behavioral strategy. If $t$ is any leaf of the game tree, our mixed strategy needs to satisfy that $p(t|s_1^*,\bm{\alpha_{-1}}) = p(t|s_1,\bm{\alpha_{-1}})$.
+
+\noindent First, observe that any leaf is is reachable by a unique path from the root (property of trees, $\sigma$ is injective etc.).\\
+Given any leaf $t$, there is a unique path $K_t$ from the root to $t$. We can compute the probability of $K_t$ being followed under the full profile $\bm{\alpha}=(\bm{\alpha_{-i}},s_i^*)$. We do so by multiplying $s_i^*(h)(a)$ for all nodes where $i$ gets to play and the respective action $a$ that corresponds to $K_t$, then we multiply the probabilities of player $i$ playing the actions on $K_t$ under $s_i^*$ with the probabilities  of the other players playing the actions on $K_t$ where they get to choose- either $1$ or $0$. Thus we arrive at $p(t|s_1^*,\bm{\alpha_{-1}})$. We can do this for every leaf $z\in Z$ and its corresponding path $K_z$. \\
+Given some $\bm{\alpha_{-1}}$, we can then define a mixed strategy for player $i$ that is outcome-equivalent to the behavioral strategy, by specifiying with which probability she will choose exactly that pure strategy $\alpha_i$ that leads to $t$. Concretely, the actions taken by $i$ on $K_t$ constitute the pure strategy $\alpha_i$ and the probability of playing it in $s_i$ is computed by multiplying the probabilities of playing the actions in $\alpha_i$ where $i$ gets to decide in $s_i^*$.\\
+We can thus find an outcome-equivalent mixed strategy for any given behavioral strategy.
 
 $A_i$ is the set of agent $i$'s pure strategies.\\
-$p(t|s_1^*,\bm{\alpha_{-1}}) = p(t|s_1,\bm{\alpha_{-1}})$
 
 \end{document}
