@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 
 \title{%
-  Game Theory: Homework 4 \\
+  Game Theory: Homework 5 \\
   \large Silvan Hungerbuehler, 11394013}
 
 \usepackage{mathptmx} % "times new roman"
@@ -13,10 +13,8 @@
 \usepackage{verbatim}
 \usepackage{hyperref}
 \usepackage{comment}
-\usepackage[margin=1in]{geometry}
+%\usepackage[margin=1in]{geometry}
 \usepackage{float}
-\usepackage{tikz}
-\usetikzlibrary{positioning}
 \usepackage{bm}
 
 \usepackage[normalem]{ulem}
@@ -27,8 +25,34 @@
 \section*{Question 1}
 \subsection*{a}
 Every bidder submits a concealed bid to the auctioneer who then awards the item for sale to the highest bidder. This bidder then pays a price equal to the third-highest bid submitted.
-\subsection*{b}
-Submitting the highest bid as long as the third-highest bid is still less or equal to your true valuation. \\
-Interestingly, truth-telling is no longer incentivized as it was in the second-price auction and strategizing becomes now possible. Consider a situation with three bidders: $i,j$ and $h$ where the true valuations are such that $v_j>v_i>v_h$. Say, $j$ and $h$ submit truthful bids, so that $\hat{v_j}=v_j$ and $\hat{v_h}=v_h$. Then $i$ can profit from offering some bid $\hat{v_i}>\hat{v_j}>v_i$. Although $i$ is not playing truthfully, for $\hat{v_i}\neq v_i$, her utility will be $v_i-\hat{v_h}>0$, thus strictly larger than the payoff of zero she would have gotten for playing $\hat{v_i}=v_i$.
-\subsection*{c}
+\subsection*{b \& c}
+A good strategy consists in submitting the highest bid as long as the third-highest bid is still less or equal to your true valuation. Differently from the best strategy for the second-price auction playing optimally thus involves reasoning about the other players' behaviour.\\
+Moreover, truth-telling is no longer incentivized as it was in the second-price auction and strategizing becomes now possible. To see this consider an auction with three bidders: $i,j$ and $h$ where the true valuations are such that $v_j>v_i>v_h$. Say, $j$ and $h$ submit truthful bids, so that $\hat{v_j}=v_j$ and $\hat{v_h}=v_h$. Then $i$ could profit from offering some bid $\hat{v_i}>\hat{v_j}>v_i$ and not just report her true valuation. Although $i$ is not playing truthfully, for $\hat{v_i}\neq v_i$, her utility will be $v_i-\hat{v_h}>0$, thus strictly larger than the payoff of zero she would have gotten for playing $\hat{v_i}=v_i$.\\
+Therefore, a bidder's best bid depends on what the other players' true valuations are. This, in turn, implies that there is no dominant strategy.
+\subsection*{d}
+When trying to maximize their utility bidders can submit bids in such a way as to incur a cost. \\
+Consider the following example. Suppose player $i$ anticipates mistakenly that her true valuation is higher than $h$'s but lower than $j$ and thinks correctly that $h$ and $j$ will bid truthfully. In reality the bid truthfully, however, $v_j>v_h>v_j$. Now, $i$ will play $\hat{v_{i}}>\hat{v_i}=v_i$ which indeed garantuees her the win, yet since $\hat{v_h}=v_h>v_i$ she loses $v_h-v_i$ instead of winning the auction for a price below her valuation.\\
+In such a situation it would be beneficial for $i$ as well as for $j$ to award the auctioned item to $j$ for a price $p=v_h$. This would cancel $i$'s loss, thus leaving her better off, and give $j$ a payoff of $v_j-v_h$ which is an increase from the $0$ she got before.\\
+In brief, the third-price sealed bid auction is not Pareto efficient in the sense described.
+\section*{Question 2}
+We have to define the elements of the tuple $<N,\bm{A},\bm{\Theta},p,\bm{u}>$.
+\begin{align*}
+&N=\{1,2\} \\
+&\bm{A}=A_1\times A_2, \text{ where $A_1=A_2=\mathbb{R}_{\geq 0}$}\text{. Note that this makes $\bm{A}$ infinite.}\\
+&\bm{\Theta}=\Theta_1 \times \Theta_2, \text{ where $\Theta_1=\Theta_2= \mathbb{N}\cap [101,200]$}\\
+&p: \bm{\Theta} \rightarrow [0,1] \text{ is a constant function assigning $p(\theta)=\tfrac{1}{|\bm{\Theta}|}$ to all $\theta \in \bm{\Theta}$}\\
+&\bm{u}=(u_1,u_2)\\
+&u_1:\bm{A}\times \bm{\Theta} \rightarrow \mathbb{R},\text{ eg. $((a_1,a_2),(\theta_1, \theta_2))\rightarrow r\in \mathbb{R}_{\geq 0}$}\\
+&\text{Concretely, with strict ordering of bidders' offers (no ties):}\\
+&\text{For some action profile $(a_1,a_2)\in\bm{A}$ and some type profile $(\theta_1,\theta_2)\in \bm{\Theta}$,}\\
+&u_1=\begin{cases}
+\text{if } a_1>a_2 \text{ then }\theta_1-a_1 \\
+\text{otherwise } 0
+\end{cases}\\
+&u_2=\begin{cases}
+\text{if } a_2>a_1 \text{ then }\theta_2-a_2 \\
+\text{otherwise } 0
+\end{cases}
+\end{align*}
+
 \end{document}
