@@ -38,7 +38,7 @@ In brief, the third-price sealed bid auction is not Pareto efficient in the sens
 We have to define the elements of the tuple $<N,\bm{A},\bm{\Theta},p,\bm{u}>$.
 \begin{align*}
 &N=\{1,2\} \\
-&\bm{A}=A_1\times A_2, \text{ where $A_1=A_2=\mathbb{R}_{\geq 0}$}\text{. Note that this makes $\bm{A}$ infinite.}\\
+&\bm{A}=A_1\times A_2, \text{ where $A_1=A_2=\mathbb{N}_{\geq 0}$}\text{. Note that only integers count as bids.}\\
 &\bm{\Theta}=\Theta_1 \times \Theta_2, \text{ where $\Theta_1=\Theta_2= \mathbb{N}\cap [101,200]$}\\
 &p: \bm{\Theta} \rightarrow [0,1] \text{ is a constant function assigning $p(\theta)=\tfrac{1}{|\bm{\Theta}|}$ to all $\theta \in \bm{\Theta}$}\\
 &\bm{u}=(u_1,u_2)\\
@@ -54,6 +54,15 @@ We have to define the elements of the tuple $<N,\bm{A},\bm{\Theta},p,\bm{u}>$.
 \text{otherwise } 0
 \end{cases}
 \end{align*}
+
+\textbf{Finding a Bayes-Nash-Equilibrium}\\
+First, note the following point: No player $i$ can ever benefit from offering a bid $a_i$ that is higher than her true valuation $\theta_i$, for winning would the auction would imply a utility loss of $\theta_i - a_i$. I claim that the strategy profile where both bidders submit $\theta_i - 11$ as their bid is a Bayes-NE. To see this imagine an initial situation where both players bid their true valuation. (I will focus on one bidder but since they're in the same situation the reasoning is completely analogous for the other.) \\
+By playing thruthfully the bidder can expect a payoff of $0$; if her bid is highest she gets the item at a price equal to valuation, if she loses then she gets no item and no bill, both cases result in a payoff of $0$. \footnote{I have assumed that the auction is called off if both submit the same bid. The payoff for both would be $0$ too.}. \\
+Given this expected payoff, she can clearly improve by playing a different strategy. Namely, submitting a bid slightly below her true valuation of the item: say $a_1=\theta_1-1$. If she still wins the bid, then she obtains positive utility of $1$ - the difference between her bid and valuation. If she loses (doesn't get the highest bid), then her payoff is still $0$. Of course, her chance of losing increases by bidding lower. How much thus the chance of losing increase? By exactly $\tfrac{1}{100}$, since it is known that the other bidder's valuation is uniformly distributed over $100$ integers. But she would have obtained a utility of $0$ irrespective of winning or losing, so moving one integer down is dominant anyway.\\
+Is playing $a_1=\theta_1-1$ her best strategy? No, because playing $a_1=\theta_1-2$ would gives her a marginal increase in utility of $1$ if she wins, and the marginal increase in expected loss is only $\tfrac{1}{100}*1=\tfrac{1}{100}$ - the added probability of losing the auction by moving to $a_1=\theta_1-2$ times what she would have won in $a_1=\theta_1-1$. Since her expected marginal increase in utility is greater than her expected marginal loss ($1>\tfrac{1}{100}$, she will thus move to $a_1=\theta_1-2$.\\
+ Is this now her best option? No, by moving down to a strategy where $a_1=\theta_1-3$ she still has increases her marginal utility by $1$ if she wins, and her marginal increase in expected loss is $\tfrac{1}{100}*2$.\\
+Both players will reason this way and lower their bids in the attempt to still win the auction while maximizing the difference between their true valuation and the price they end up paying if they do come out victorious. They stop once their marginal increase in utility in the case of winning is not strictly bigger than the marginal increase in expected loss. The table below summarizes the process by which we arrive at this result:
+
 
 \section*{3}
 The mechanism described is not incentive-compatible. To see this consider the following auction with $n=4$ and $k=3$. The first table represents a situation where all bidders submit thruthful bids. Compare it with the second table where all the valuations remain as before and Bidder $1$ obtains an advantage by submitting a false valuation. She manages to improve her payoff from $0$ to $5$. This goes to show that bidding thruthfully is not a dominant strategy.
