@@ -31,14 +31,14 @@ Moreover, truth-telling is no longer incentivized as it was in the second-price 
 Therefore, a bidder's best bid depends on what the other players' true valuations are. This, in turn, implies that there is no dominant strategy.
 \subsection*{d}
 When trying to maximize their utility bidders can submit bids in such a way as to incur a cost. \\
-Consider the following example. Suppose player $i$ anticipates mistakenly that her true valuation is higher than $h$'s but lower than $j$ and thinks correctly that $h$ and $j$ will bid truthfully. In reality the bid truthfully, however, $v_j>v_h>v_j$. Now, $i$ will play $\hat{v_{i}}>\hat{v_i}=v_i$ which indeed garantuees her the win, yet since $\hat{v_h}=v_h>v_i$ she loses $v_h-v_i$ instead of winning the auction for a price below her valuation.\\
+Consider the following example. Suppose player $i$ anticipates mistakenly that her true valuation is higher than $h$'s and correcty that it is lower than $j$ - she believes: $(v_j>v_i>v_h)$ - and assumes that $h$ and $j$ will bid truthfully. Her last assumption is correct, they really do bid truthfully, however, $h$'s valuations is not as she believes. In reality the valuations are ordered $v_j>v_h>v_i$. Now, $i$ will play $\hat{v_{i}}>\hat{v_j}=v_j$ which indeed garantuees her the win. But since the bids are now $\hat{v_i}>\hat{v_j}=\hat{v_j}>hat{v_h}=v_h>v_i$, so the third-higest bid is now equal to $v_h$, she loses $v_h-v_i$ instead of winning the auction for a price below her valuation.\\
 In such a situation it would be beneficial for $i$ as well as for $j$ to award the auctioned item to $j$ for a price $p=v_h$. This would cancel $i$'s loss, thus leaving her better off, and give $j$ a payoff of $v_j-v_h$ which is an increase from the $0$ she got before.\\
 In brief, the third-price sealed bid auction is not Pareto efficient in the sense described.
 \section*{Question 2}
 We have to define the elements of the tuple $<N,\bm{A},\bm{\Theta},p,\bm{u}>$.
 \begin{align*}
 &N=\{1,2\} \\
-&\bm{A}=A_1\times A_2, \text{ where $A_1=A_2=\mathbb{N}_{\geq 0}$}\text{. Note that only integers count as bids.}\\
+&\bm{A}=A_1\times A_2, \text{ where $A_1=A_2=\mathbb{N}_{\geq 0}$}\text{. Note that I count only integers as bids.}\\
 &\bm{\Theta}=\Theta_1 \times \Theta_2, \text{ where $\Theta_1=\Theta_2= \mathbb{N}\cap [101,200]$}\\
 &p: \bm{\Theta} \rightarrow [0,1] \text{ is a constant function assigning $p(\theta)=\tfrac{1}{|\bm{\Theta}|}$ to all $\theta \in \bm{\Theta}$}\\
 &\bm{u}=(u_1,u_2)\\
@@ -55,24 +55,29 @@ We have to define the elements of the tuple $<N,\bm{A},\bm{\Theta},p,\bm{u}>$.
 \end{cases}
 \end{align*}
 
-\textbf{Finding a Bayes-Nash-Equilibrium}\\
-First, note the following point: No player $i$ can ever benefit from offering a bid $a_i$ that is higher than her true valuation $\theta_i$, for winning would the auction would imply a utility loss of $\theta_i - a_i$. I claim that the strategy profile where both bidders submit $\theta_i - 11$ as their bid is a Bayes-NE. To see this imagine an initial situation where both players bid their true valuation. (I will focus on one bidder but since they're in the same situation the reasoning is completely analogous for the other.) \\
-By playing thruthfully the bidder can expect a payoff of $0$; if her bid is highest she gets the item at a price equal to valuation, if she loses then she gets no item and no bill, both cases result in a payoff of $0$. \footnote{I have assumed that the auction is called off if both submit the same bid. The payoff for both would be $0$ too.}. \\
-Given this expected payoff, she can clearly improve by playing a different strategy. Namely, submitting a bid slightly below her true valuation of the item: say $a_1=\theta_1-1$. If she still wins the bid, then she obtains positive utility of $1$ - the difference between her bid and valuation. If she loses (doesn't get the highest bid), then her payoff is still $0$. Of course, her chance of losing increases by bidding lower. How much thus the chance of losing increase? By exactly $\tfrac{1}{100}$, since it is known that the other bidder's valuation is uniformly distributed over $100$ integers. But she would have obtained a utility of $0$ irrespective of winning or losing, so moving one integer down is dominant anyway.\\
-Is playing $a_1=\theta_1-1$ her best strategy? No, because playing $a_1=\theta_1-2$ would gives her a marginal increase in utility of $1$ if she wins, and the marginal increase in expected loss is only $\tfrac{1}{100}*1=\tfrac{1}{100}$ - the added probability of losing the auction by moving to $a_1=\theta_1-2$ times what she would have won in $a_1=\theta_1-1$. Since her expected marginal increase in utility is greater than her expected marginal loss ($1>\tfrac{1}{100}$, she will thus move to $a_1=\theta_1-2$.\\
- Is this now her best option? No, by moving down to a strategy where $a_1=\theta_1-3$ she still has increases her marginal utility by $1$ if she wins, and her marginal increase in expected loss is $\tfrac{1}{100}*2$.\\
-Both players will reason this way and lower their bids in the attempt to still win the auction while maximizing the difference between their true valuation and the price they end up paying if they do come out victorious. They stop once their marginal increase in utility in the case of winning is not strictly bigger than the marginal increase in expected loss. The table below summarizes the process by which we arrive at this result:
-
+\textbf{Finding a Bayes-Nash-Equilibrium (BNE)}\\
+There is a Bayes-Nash-Equilibrium in the pure strategy profile $\bm{s}=(s_1,s_2)$ where both bidders bid according to strategy $s_i: a_i=\tfrac{\theta_i}{2}+50$, where $\theta_i$ denotes bidder $i$'s true valuation and $a_i$ her bid.\\
+To see that this is indeed a BNE consider Bidder 1's position. I want to show that in $\bm{s}$ her best strategy is $s_1$, given that the other bidder plays $s_2$. Because both players play 
+analogously, this then forms a stable strategy profile where nobody wants to deviate unilaterally.\\
+Bidder 1's utility $u_i$ is equal to $0$ if $a_1<a_2$, where $a_2$ is the other bidder's offer, and equal to $\theta_1-a_1$ if $a_1\geq a_2$ (\textbf{assume that ties are broken in first 
+bidder's favour}). So Bidder 1's expected utility when observing type $\theta_1$ and submitting bid $a_1$ is equal to the probability of winning with $a_1$ times the difference between her 
+bid and her valuation: $EU_1(a_1)=P(win|a_1)\times (\theta_1-a_1)$. Now, what about the probability of winning with some bid, given that the other bidder plays according to $s_2$?\\
+$P(win|a_1, s_2):\\
+\begin{cases}
+\text{if } a_1>150\text{, then }P(win|a_1,s_2)=1\\
+\text{if } a_1\leq 150\text{, then }P(win|a_1,s_2)=0\\
+\text{if } 101\leq a_1\geq 150\text{, then }P(win|a_1,s_2)=\tfrac{1}{50}*(x-100)\\
+\end{cases} $
+To find the optimal bid, Bidder 1 thus maximizes the expression $\tfrac{1}{50}*(a_1-100)*(\theta_1-a_1)$ for $a_1$. This yields an optimal bid $a_1^*$, given some type $\theta_1$, of $a_1^*=\tfrac{\theta_1}{2}+50$.\\
 
 \section*{3}
 The mechanism described is not incentive-compatible. To see this consider the following auction with $n=4$ and $k=3$. The first table represents a situation where all bidders submit thruthful bids. Compare it with the second table where all the valuations remain as before and Bidder $1$ obtains an advantage by submitting a false valuation. She manages to improve her payoff from $0$ to $5$. This goes to show that bidding thruthfully is not a dominant strategy.
 \begin{table}[h]
 \centering
 \caption{Situation with True Valuations}
-\label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
-$N$ & values:$(\alpha_1,\alpha_2,\alpha_3)$ & bids & gets       & pays                & $\delta$ \\ \hline
+$N$ & values:$(\alpha_1,\alpha_2,\alpha_3)$ & bids & gets       & pays                & $\Delta$ \\ \hline
 1 & $(8,4,2)$                                & $8$    & -          & $0$                   & $0$        \\ \hline
 2 & $(32,16,8)$                              & $32$   & $\alpha_2$ & $\tfrac{1}{2^1}*12=6$ & $26$       \\ \hline
 3 & $(12,6,3)$                               & $12$   & $\alpha_3$ & $\tfrac{1}{2^2}*8=2$  & $10$       \\ \hline
@@ -82,16 +87,14 @@ $N$ & values:$(\alpha_1,\alpha_2,\alpha_3)$ & bids & gets       & pays          
 \begin{table}[h]
 \centering
 \caption{Situation where Bidder 1 lies}
-\label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
-$N$ & values:$(\alpha_1,\alpha_2,\alpha_3)$ & bids & gets       & pays                & $\delta$ \\ \hline
+$N$ & values:$(\alpha_1,\alpha_2,\alpha_3)$ & bids & gets       & pays                & $\Delta$ \\ \hline
 1 & $(8,4,2)$                                & $13$    & $\alpha_3$& $\tfrac{1}{2^2}*12=3$  & $5$     \\ \hline
 2 & $(32,16,8)$                              & $32$   & $\alpha_2$ & $\tfrac{1}{2^1}*13=6.5$ & $25.5$       \\ \hline
 3 & $(12,6,3)$                               & $12$   & -			 & $0$  					& $0$       \\ \hline
 4 & $(60,30,15)$                             & $60$   & $\alpha_1$ & $\tfrac{1}{2^0}*32$ & $28$       \\ \hline
 \end{tabular}
 \end{table}
-
 
 \end{document}
